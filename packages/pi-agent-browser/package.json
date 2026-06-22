@@ -1,0 +1,14 @@
+{
+  "name": "pi-agent-browser",
+  "version": "0.1.0",
+  "description": "LLM-driven browser automation for pi-coding-agent via agent-browser CLI",
+  "keywords": ["pi-package", "browser", "automation", "ai-agent", "playwright", "chromium"],
+  "license": "MIT",
+  "author": "pi-powerkit contributors",
+  "pi": {
+    "extensions": ["extensions/agent-browser.ts"]
+  },
+  "peerDependencies": {
+    "agent-browser": "*"
+  }
+}

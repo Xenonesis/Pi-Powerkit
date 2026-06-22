@@ -1,0 +1,14 @@
+{
+  "name": "pi-cline-free",
+  "version": "0.1.0",
+  "description": "11 verified Cline free models + 1 TokenRouter model for pi",
+  "keywords": ["pi-package", "cline", "tokenrouter", "free-models", "provider"],
+  "license": "MIT",
+  "author": "pi-powerkit contributors",
+  "pi": {
+    "extensions": ["extensions/cline-provider.ts"]
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}

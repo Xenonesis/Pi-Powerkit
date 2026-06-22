@@ -1,0 +1,14 @@
+{
+  "name": "pi-opencode-free",
+  "version": "0.1.0",
+  "description": "Dynamic OpenCode Zen free model fetcher for pi",
+  "keywords": ["pi-package", "opencode", "free-models", "provider", "dynamic"],
+  "license": "MIT",
+  "author": "pi-powerkit contributors",
+  "pi": {
+    "extensions": ["extensions/opencode-free.ts"]
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}
