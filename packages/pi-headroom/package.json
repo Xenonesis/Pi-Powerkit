@@ -1,0 +1,14 @@
+{
+  "name": "pi-headroom",
+  "version": "0.1.0",
+  "description": "Headroom context compression extension for Pi coding agent",
+  "main": "extensions/headroom.ts",
+  "license": "MIT",
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": ">=0.1.0"
+  },
+  "dependencies": {
+    "headroom-ai": "^0.22.4"
+  },
+  "keywords": ["pi", "headroom", "context-compression", "llm", "agent"]
+}

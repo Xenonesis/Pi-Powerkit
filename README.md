@@ -23,6 +23,7 @@
 | **[pi-agent-browser](./packages/pi-agent-browser)** | LLM-driven browser automation via `agent-browser` CLI. Visual feedback with vision-capable models. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-agent-browser` |
 | **[pi-cline-free](./packages/pi-cline-free)** | 11 verified-working Cline free models + 1 TokenRouter model. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-cline-free` |
 | **[pi-opencode-free](./packages/pi-opencode-free)** | Dynamic OpenCode Zen free model fetcher with cached lookup. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-opencode-free` |
+| **[pi-headroom](./packages/pi-headroom)** | Context compression via Headroom (60–95% token savings). | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-headroom` |
 
 ## Install everything
 
@@ -38,6 +39,7 @@ pi install git:github.com/Xenonesis/Pi-Powerkit
 - ⚡ **Cached & dynamic** — instant startup, auto-refreshes free model lists
 - 🔒 **Self-hosted** — everything runs locally, your data stays with you
 - 🔌 **Modular** — install only what you need
+- 🗜️ **Context compression** — headroom integration for 60–95% token savings
 
 ## Quick start
 
@@ -48,6 +50,10 @@ export CLINE_API_KEY="sk_..."
 export OPENCODE_API_KEY="sk-..."
 export TOKENROUTER_API_KEY="sk-..."
 export NVIDIA_NIM_API_KEY="nvapi-..."   # optional
+
+# Headroom (optional, for context compression)
+export HEADROOM_API_URL="http://127.0.0.1:8787"
+export HEADROOM_API_KEY="sk-..."
 
 # 3. Install packages
 pi install git:github.com/Xenonesis/Pi-Powerkit
@@ -92,6 +98,16 @@ Registers 11 verified-working Cline free models + 1 TokenRouter model. API keys 
 ### pi-opencode-free
 Fetches free models from OpenCode Zen API at startup, caches them to `~/.pi/agent/cache/opencode-free.json`, refreshes in background every hour. API key from `OPENCODE_API_KEY`.
 
+### pi-headroom
+Wraps the [Headroom](https://github.com/headroomlabs-ai/headroom) compression service. Provides two tools:
+- `headroom.compress` — compress text/messages to save tokens
+- `headroom.status` — check if the Headroom server is reachable
+
+Configure with:
+```bash
+export HEADROOM_API_URL="http://127.0.0.1:8787"   # default proxy
+export HEADROOM_API_KEY="sk-..."                     # optional for cloud
+
 ## Setup details
 
 See individual package READMEs:
@@ -99,6 +115,7 @@ See individual package READMEs:
 - [pi-cline-free setup](./packages/pi-cline-free/README.md)
 - [pi-opencode-free setup](./packages/pi-opencode-free/README.md)
 - [NVIDIA NIM setup](./examples/README.md)
+- [pi-headroom setup](./packages/pi-headroom/README.md)
 
 ## Contributing
 
