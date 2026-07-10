@@ -1,0 +1,14 @@
+{
+  "name": "pi-kilocode",
+  "version": "0.1.0",
+  "description": "10 KiloCode free models for pi",
+  "keywords": ["pi-package", "kilocode", "free-models", "provider"],
+  "license": "MIT",
+  "author": "pi-powerkit contributors",
+  "pi": {
+    "extensions": ["extensions/kilocode-provider.ts"]
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}
