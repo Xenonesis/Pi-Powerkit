@@ -18,15 +18,15 @@ Registers **AgentRouter** provider in pi with **5 models**.
 
 Or just copy `extensions/agentrouter-provider.ts` to `~/.pi/agent/extensions/`.
 
-## Models
+## Models & Real Context Windows
 
-| Model | Type | Context |
-|-------|------|---------|
-| `gpt-5.5` | OpenAI-compat | 128K |
-| `claude-opus-4-6` | Claude Opus | 200K |
-| `claude-opus-4-7` | Claude Opus | 200K |
-| `claude-opus-4-8` | Claude Opus | 200K |
-| `glm-5.2` | GLM | 128K |
+| Model | Provider | Context | Max Output | Input |
+|-------|----------|---------|-----------|-------|
+| `gpt-5.5` | OpenAI | **1,048,576** (1M) | **131,072** (128K) | text, image |
+| `claude-opus-4-6` | Anthropic | **1,000,000** (1M) | **131,072** (128K) | text, image |
+| `claude-opus-4-7` | Anthropic | **1,000,000** (1M) | **131,072** (128K) | text, image |
+| `claude-opus-4-8` | Anthropic | **1,000,000** (1M) | **131,072** (128K) | text, image |
+| `glm-5.2` | Z.ai | **1,048,576** (1M) | **131,072** (128K) | text |
 
 ## API Key
 
