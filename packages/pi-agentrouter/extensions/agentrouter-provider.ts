@@ -18,9 +18,9 @@ export default function (pi: ExtensionAPI) {
         id: "gpt-5.5",
         name: "GPT-5.5",
         reasoning: true,
-        input: ["text"],
-        contextWindow: 128000,
-        maxTokens: 16384,
+        input: ["text", "image"],
+        contextWindow: 1048576,  // 1M (922K input + 128K output)
+        maxTokens: 131072,
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
       },
       {
@@ -28,8 +28,8 @@ export default function (pi: ExtensionAPI) {
         name: "Claude Opus 4.6",
         reasoning: true,
         input: ["text", "image"],
-        contextWindow: 200000,
-        maxTokens: 4096,
+        contextWindow: 1000000,  // 1M tokens
+        maxTokens: 131072,       // 128K output
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
       },
       {
@@ -37,8 +37,8 @@ export default function (pi: ExtensionAPI) {
         name: "Claude Opus 4.7",
         reasoning: true,
         input: ["text", "image"],
-        contextWindow: 200000,
-        maxTokens: 4096,
+        contextWindow: 1000000,  // 1M tokens
+        maxTokens: 131072,       // 128K output
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
       },
       {
@@ -46,17 +46,17 @@ export default function (pi: ExtensionAPI) {
         name: "Claude Opus 4.8",
         reasoning: true,
         input: ["text", "image"],
-        contextWindow: 200000,
-        maxTokens: 4096,
+        contextWindow: 1000000,  // 1M tokens
+        maxTokens: 131072,       // 128K output
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
       },
       {
         id: "glm-5.2",
-        name: "GLM 5.2",
+        name: "GLM-5.2",
         reasoning: true,
         input: ["text"],
-        contextWindow: 128000,
-        maxTokens: 163840,
+        contextWindow: 1048576,  // 1M tokens
+        maxTokens: 131072,       // 128K output
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
       },
     ],
