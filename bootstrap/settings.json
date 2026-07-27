@@ -1,4 +1,7 @@
 {
+  "defaultProvider": "opencode-zen",
+  "defaultModel": "deepseek-v4-flash-free",
+  "theme": "dark",
   "packages": [
     "npm:pi-skillful",
     "npm:@eko24ive/pi-ask",

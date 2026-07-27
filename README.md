@@ -46,11 +46,13 @@ This installs all 11 packages. You still need to set API keys via `.env` or `mod
 
 ## Features
 
+- 🌐 **Web search** — free DuckDuckGo search, no API key
 - 🤖 **LLM-driven browser** — your AI can browse the web, take screenshots, click buttons, fill forms
 - 🆓 **50+ free models** — across AIHubMix (25), Cline (11), OpenCode Zen (6), KiloCode (10), TokenRouter
 - 👁️ **Visual feedback** — vision-capable models can see and describe screenshots
 - ⚡ **Cached & dynamic** — instant startup, auto-refreshes free model lists
 - 🔒 **Self-hosted** — everything runs locally, your data stays with you
+- 🔌 **SSH remote** — run on remote machines via SSH
 - 🔌 **Modular** — install only what you need
 - 🗜️ **Context compression** — headroom integration for 60–95% token savings
 
@@ -154,8 +156,10 @@ export HEADROOM_API_KEY="sk-..."                     # optional for cloud
 | pi-xiaomi | ✅ | Env var + registerProvider — pure JS |
 | pi-databricks | ✅ | Env var + registerProvider — pure JS |
 | pi-modal | ✅ | Env var + registerProvider — pure JS |
+| pi-ddg-search | ❌ | Uses \`node:child_process\` (curl) — needs native Node |
+| pi-ssh | ❌ | Uses \`node:child_process\` (spawn) — needs native Node |
 
-> Most provider extensions work with pi_agent_rust because they only use \`registerProvider()\` and env vars. Browser and cache-based extensions need Node.js.
+> Most provider extensions work with pi_agent_rust because they only use \`registerProvider()\` and env vars. Browser, cache-based, search, and SSH extensions need Node.js.
 
 ## Setup details
 
