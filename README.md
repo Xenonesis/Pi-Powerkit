@@ -46,6 +46,16 @@ This installs all 13 packages. You still need to set API keys via `.env` or `mod
 
 > **Note:** pi-headroom is optional — it runs a local compression service that uses extra RAM. Skip if you're on a tight system.
 
+## OS Compatibility
+
+| OS | Status | Notes |
+|-----|--------|-------|
+| **Linux** | ✅ Full | Tested on Ubuntu/Debian/Kali. All tools auto-configure. |
+| **macOS** | ✅ Full | Paths detected automatically for Zed and VS Code. |
+| **Windows** | ⚠️ WSL/Git Bash | Needs WSL or Git Bash for bash scripts. Pi + OMP work natively. |
+
+**Requirements:** bash, python3, npm, git. All common on dev machines.
+
 ## Features
 
 - 🌐 **Web search** — free DuckDuckGo search, no API key
