@@ -40,7 +40,7 @@ If you already have pi and just want the packages without the full bootstrap:
 pi install git:github.com/Xenonesis/Pi-Powerkit
 ```
 
-This installs all 11 packages. You still need to set API keys via `.env` or `models.json`.
+This installs all 13 packages. You still need to set API keys via `.env` or `models.json`.
 
 > **Note:** pi-headroom is optional — it runs a local compression service that uses extra RAM. Skip if you're on a tight system.
 
