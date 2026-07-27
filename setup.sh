@@ -149,11 +149,22 @@ else
 fi
 
 # =========================================================
-#  3. ZED SETUP (~/.config/zed/settings.json)
+#  3. ZED SETUP (cross-platform paths)
 # =========================================================
 echo ""
 echo "--- Zed ---"
-ZED_FILE="$HOME/.config/zed/settings.json"
+# Detect OS for cross-platform paths
+case "$(uname -s)" in
+  Darwin)
+    ZED_FILE="$HOME/Library/Application Support/Zed/settings.json"
+    ;;
+  MINGW*|MSYS*|CYGWIN*)
+    ZED_FILE="$LOCALAPPDATA/Zed/settings.json"
+    ;;
+  *)
+    ZED_FILE="$HOME/.config/zed/settings.json"
+    ;;
+esac
 if [ -f "$ZED_FILE" ]; then
   python3 << 'PYEOF' "$ZED_FILE"
 import json, sys, os
@@ -194,11 +205,21 @@ else
 fi
 
 # =========================================================
-#  4. COPILOT SETUP (~/.config/Code/User/chatLanguageModels.json)
+#  4. COPILOT SETUP (cross-platform paths)
 # =========================================================
 echo ""
 echo "--- VS Code Copilot ---"
-COPILOT_FILE="$HOME/.config/Code/User/chatLanguageModels.json"
+case "$(uname -s)" in
+  Darwin)
+    COPILOT_FILE="$HOME/Library/Application Support/Code/User/chatLanguageModels.json"
+    ;;
+  MINGW*|MSYS*|CYGWIN*)
+    COPILOT_FILE="$LOCALAPPDATA/Code/User/chatLanguageModels.json"
+    ;;
+  *)
+    COPILOT_FILE="$HOME/.config/Code/User/chatLanguageModels.json"
+    ;;
+esac
 if [ -f "$COPILOT_FILE" ]; then
   python3 << 'PYEOF' "$COPILOT_FILE"
 import json, sys
