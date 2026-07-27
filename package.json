@@ -1,0 +1,12 @@
+{
+  "name": "pi-powerkit",
+  "version": "1.0.0",
+  "description": "All-in-one Pi coding agent setup — models, extensions, browser, search, SSH",
+  "private": true,
+  "scripts": {
+    "setup": "bash setup.sh",
+    "postinstall": "bash setup.sh --no-interactive"
+  },
+  "keywords": ["pi-coding-agent", "pi-powerkit", "setup"],
+  "license": "MIT"
+}

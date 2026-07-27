@@ -32,11 +32,15 @@
 | **[pi-databricks](./packages/pi-databricks)** | Databricks provider — system.ai.glm-5-2 model. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-databricks` |
 | **[pi-modal](./packages/pi-modal)** | Modal provider — GLM-5-FP8 & GLM-5.1-FP8 models. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-modal` |
 
-## Install everything
+## Install everything (alternative)
+
+If you already have pi and just want the packages without the full bootstrap:
 
 ```bash
 pi install git:github.com/Xenonesis/Pi-Powerkit
 ```
+
+This installs all 11 packages. You still need to set API keys via `.env` or `models.json`.
 
 > **Note:** pi-headroom is optional — it runs a local compression service that uses extra RAM. Skip if you're on a tight system.
 
@@ -50,10 +54,23 @@ pi install git:github.com/Xenonesis/Pi-Powerkit
 - 🔌 **Modular** — install only what you need
 - 🗜️ **Context compression** — headroom integration for 60–95% token savings
 
-## Quick start
+## Quick start — Clone & run
 
 ```bash
-# 1. Install [pi-coding-agent](https://pi.dev/)
+git clone https://github.com/Xenonesis/Pi-Powerkit.git
+cd Pi-Powerkit
+
+# Copy .env and fill in your API keys (or run setup for interactive prompts)
+cp bootstrap/.env.example .env
+nano .env
+
+# One-command setup: creates configs, installs deps, sets up browser
+bash setup.sh
+
+# Restart pi, then /model to see all providers
+```
+
+> **No API keys?** OpenCode Zen (6 free models) and some aihubmix models work without keys. Just run `setup.sh` and press Enter to skip each key.
 # 2. Set API keys (free tiers available everywhere)
 export CLINE_API_KEY="sk_..."
 export OPENCODE_API_KEY="sk-..."

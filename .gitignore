@@ -19,3 +19,7 @@ build/
 # Environment files
 .env
 .env.local
+
+# API keys (bootstrap)
+bootstrap/.env
+.env

@@ -1,0 +1,847 @@
+{
+  "providers": {
+    "opencode-zen": {
+      "baseUrl": "https://opencode.ai/zen/v1",
+      "apiKey": "${GITHUB_TOKEN}",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "deepseek-v4-flash-free",
+          "name": "DeepSeek V4 Flash (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 128000
+        },
+        {
+          "id": "mimo-v2.5-free",
+          "name": "MiMo V2.5 (FREE)",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 65536
+        },
+        {
+          "id": "north-mini-code-free",
+          "name": "North Mini Code (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "nemotron-3-ultra-free",
+          "name": "Nemotron 3 Ultra (FREE)",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 32768
+        },
+        {
+          "id": "ling-3.0-flash-free",
+          "name": "Ling 3.0 Flash (FREE)",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 256000,
+          "maxTokens": 65536
+        },
+        {
+          "id": "laguna-s-2.1-free",
+          "name": "Laguna S 2.1 (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 32768
+        }
+      ]
+    },
+    "kilo-code": {
+      "baseUrl": "https://api.kilo.ai/api/gateway",
+      "apiKey": "${KILO_API_KEY}",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "google/gemma-4-26b-a4b-it:free",
+          "name": "Google: Gemma 4 26B A4B (free)",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 32768
+        },
+        {
+          "id": "inclusionai/ling-2.6-1t:free",
+          "name": "inclusionAI: Ling-2.6-1T (free)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 32768
+        },
+        {
+          "id": "inclusionai/ling-2.6-flash:free",
+          "name": "inclusionAI: Ling-2.6-flash (free)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 32768
+        },
+        {
+          "id": "inclusionai/ring-2.6-1t:free",
+          "name": "inclusionAI: Ring-2.6-1T (free) - reasoning",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 65536
+        },
+        {
+          "id": "nex-agi/nex-n2-pro:free",
+          "name": "Nex AGI: Nex-N2-Pro (free)",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 256000
+        },
+        {
+          "id": "nvidia/nemotron-3-super-120b-a12b:free",
+          "name": "NVIDIA: Nemotron 3 Super 120B (free)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 262144
+        },
+        {
+          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "name": "NVIDIA: Nemotron 3 Ultra 550B (free)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 65536
+        },
+        {
+          "id": "openrouter/pony-alpha",
+          "name": "OpenRouter: Pony Alpha",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 200000,
+          "maxTokens": 131000
+        },
+        {
+          "id": "poolside/laguna-m.1:free",
+          "name": "Poolside: Laguna M.1 (free)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 32768
+        },
+        {
+          "id": "tencent/hy3:free",
+          "name": "Tencent: Hy3 (free)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 262144
+        },
+        {
+          "id": "tencent/hy3-preview:free",
+          "name": "Tencent: Hy3 preview (free)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 262144
+        }
+      ]
+    },
+    "modal": {
+      "baseUrl": "https://api.us-west-2.modal.direct/v1",
+      "apiKey": "${MODAL_API_KEY}",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "zai-org/GLM-5-FP8",
+          "name": "ZAI GLM-5 FP8",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 1,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 32768
+        },
+        {
+          "id": "zai-org/GLM-5.1-FP8",
+          "name": "ZAI GLM-5.1 FP8",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 1,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 32768
+        }
+      ]
+    },
+    "databricks": {
+      "baseUrl": "https://dbc-3e029138-076b.cloud.databricks.com/ai-gateway/mlflow/v1",
+      "apiKey": "${DATABRICKS_API_KEY}",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "system.ai.glm-5-2",
+          "name": "Databricks GLM-5-2",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 32768
+        }
+      ]
+    },
+    "xiaomi": {
+      "baseUrl": "https://api.xiaomimimo.com/v1",
+      "apiKey": "${XIAOMI_API_KEY}",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "mimo-v2.5",
+          "name": "MiMo V2.5",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1048576,
+          "maxTokens": 131072
+        },
+        {
+          "id": "mimo-v2.5-pro",
+          "name": "MiMo V2.5 Pro",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1048576,
+          "maxTokens": 131072
+        }
+      ]
+    },
+    "agentrouter": {
+      "baseUrl": "https://agentrouter.org/v1",
+      "apiKey": "${AGENTROUTER_API_KEY}",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "claude-opus-4-8",
+          "name": "Claude Opus 4.8 (via AgentRouter)",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 128000
+        }
+      ]
+    },
+    "aihubmix": {
+      "baseUrl": "https://aihubmix.com/v1",
+      "apiKey": "${AIHUBMIX_API_KEY}",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "coding-glm-5.2-free",
+          "name": "Coding GLM-5.2 Free",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 65536
+        },
+        {
+          "id": "coding-kimi-k3-free",
+          "name": "Coding Kimi K3 (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 32768
+        },
+        {
+          "id": "gemini-3.5-flash-lite-free",
+          "name": "Gemini 3.5 Flash Lite (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 16384
+        },
+        {
+          "id": "gemini-3.6-flash-free",
+          "name": "Gemini 3.6 Flash (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 32768
+        },
+        {
+          "id": "gpt-oss-20b-free",
+          "name": "GPT-OSS 20B (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 16384
+        },
+        {
+          "id": "nemotron-nano-9b-v2-free",
+          "name": "Nemotron Nano 9B V2 (FREE)",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 16384
+        },
+        {
+          "id": "laguna-m.1-free",
+          "name": "Laguna M.1 (FREE)",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 256000,
+          "maxTokens": 32768
+        },
+        {
+          "id": "nemotron-3-ultra-550b-a55b-free",
+          "name": "Nemotron 3 Ultra 550B (FREE)",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 65536
+        },
+        {
+          "id": "nemotron-3-nano-30b-a3b-free",
+          "name": "Nemotron 3 Nano 30B (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 16384
+        },
+        {
+          "id": "gemma-4-26b-a4b-it-free",
+          "name": "Gemma 4 26B (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 32768
+        },
+        {
+          "id": "gpt-5.5-free",
+          "name": "GPT-5.5 (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 272000,
+          "maxTokens": 65536
+        },
+        {
+          "id": "xiaomi-mimo-v2-omni-free",
+          "name": "MiMo V2 Omni (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1048576,
+          "maxTokens": 131072
+        },
+        {
+          "id": "xiaomi-mimo-v2-pro-free",
+          "name": "MiMo V2 Pro (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1048576,
+          "maxTokens": 131072
+        },
+        {
+          "id": "xiaomi-mimo-v2.5-free",
+          "name": "MiMo V2.5 (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1048576,
+          "maxTokens": 131072
+        },
+        {
+          "id": "xiaomi-mimo-v2.5-pro-free",
+          "name": "MiMo V2.5 Pro (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1048576,
+          "maxTokens": 131072
+        },
+        {
+          "id": "coding-minimax-m2.7-free",
+          "name": "Coding MiniMax M2.7 (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 256000,
+          "maxTokens": 65536
+        },
+        {
+          "id": "coding-glm-5.1-free",
+          "name": "Coding GLM-5.1 (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 32768
+        },
+        {
+          "id": "coding-glm-5-free",
+          "name": "Coding GLM-5 (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 32768
+        },
+        {
+          "id": "coding-glm-5-turbo-free",
+          "name": "Coding GLM-5 Turbo (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 32768
+        },
+        {
+          "id": "coding-minimax-m2.5-free",
+          "name": "Coding MiniMax M2.5 (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 256000,
+          "maxTokens": 65536
+        },
+        {
+          "id": "gemini-3-flash-preview-free",
+          "name": "Gemini 3 Flash Preview (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 16384
+        },
+        {
+          "id": "mimo-v2-flash-free",
+          "name": "MiMo V2 Flash (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1048576,
+          "maxTokens": 131072
+        },
+        {
+          "id": "kimi-for-coding-free",
+          "name": "Kimi for Coding (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 16384
+        },
+        {
+          "id": "k2.6-code-preview-free",
+          "name": "K2.6 Code Preview (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 16384
+        },
+        {
+          "id": "qwen3.6-plus-preview-free",
+          "name": "Qwen 3.6 Plus Preview (FREE)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 16384
+        }
+      ]
+    },
+    "router9": {
+      "baseUrl": "https://api.router9.com/v1",
+      "apiKey": "${ROUTER9_API_KEY}",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "minimax/minimax-m3",
+          "name": "MiniMax M3 (via Router9)",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 65536
+        }
+      ]
+    }
+  }
+}

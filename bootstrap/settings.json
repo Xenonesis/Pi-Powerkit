@@ -1,0 +1,13 @@
+{
+  "packages": [
+    "npm:pi-skillful",
+    "npm:@eko24ive/pi-ask",
+    "npm:@kimuson/pi-ralph",
+    "npm:pi-caveman",
+    "npm:@juicesharp/rpiv-btw",
+    "npm:@plannotator/pi-extension",
+    "npm:pi-chrome",
+    "npm:gentle-engram",
+    "npm:pi-simplify"
+  ]
+}
