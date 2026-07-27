@@ -77,3 +77,8 @@ This extension wraps the `agent-browser` CLI and exposes it as the `browser` too
 ## License
 
 MIT — see [LICENSE](../../LICENSE)
+## QuickJS Compatibility
+
+⚠️ This extension uses `node:child_process` and `node:fs` — it requires Node.js. NOT compatible with pi_agent_rust (QuickJS).
+
+For pi_agent_rust, use the browser via `bash curl` or set up the agent-browser daemon manually.
