@@ -1,0 +1,10 @@
+{
+  "name": "pi-permission-gate",
+  "version": "0.1.0",
+  "description": "Permission enforcement hooks for pi — ensures safe tool execution",
+  "keywords": ["pi-package", "permissions", "security"],
+  "license": "MIT",
+  "author": "pi-powerkit contributors",
+  "pi": { "extensions": ["extensions/permission-gate.ts"] },
+  "dependencies": { "@earendil-works/pi-coding-agent": "*" }
+}

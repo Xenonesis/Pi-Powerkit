@@ -42,7 +42,7 @@ If you already have pi and just want the packages without the full bootstrap:
 pi install git:github.com/Xenonesis/Pi-Powerkit
 ```
 
-This installs all 13 packages. You still need to set API keys via `.env` or `models.json`.
+This installs all 14 packages. You still need to set API keys via `.env` or `models.json`.
 
 > **Note:** pi-headroom is optional — it runs a local compression service that uses extra RAM. Skip if you're on a tight system.
 
@@ -170,6 +170,7 @@ export HEADROOM_API_KEY="sk-..."                     # optional for cloud
 | pi-modal | ✅ | Env var + registerProvider — pure JS |
 | pi-ddg-search | ❌ | Uses \`node:child_process\` (curl) — needs native Node |
 | pi-ssh | ❌ | Uses \`node:child_process\` (spawn) — needs native Node |
+| pi-permission-gate | ✅ | Pure JS — no Node deps |
 
 > Most provider extensions work with pi_agent_rust because they only use \`registerProvider()\` and env vars. Browser, cache-based, search, and SSH extensions need Node.js.
 

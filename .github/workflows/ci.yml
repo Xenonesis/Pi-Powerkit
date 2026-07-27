@@ -1,0 +1,26 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+      - name: Validate all package.json
+        run: |
+          for d in packages/pi-*/; do
+            echo "Checking $d..."
+            node -e "JSON.parse(require('fs').readFileSync('$d/package.json'))" || exit 1
+            ext=$(node -e "const j=JSON.parse(require('fs').readFileSync('$d/package.json'));console.log(j.pi?.extensions?.[0]||j.main||'')")
+            [ -z "$ext" ] && echo "MISSING ext in $d" && exit 1
+            [ -f "$d/$ext" ] || { echo "MISSING $d/$ext"; exit 1; }
+          done
+      - name: Validate bootstrap JSON
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('bootstrap/models.json'))"
+          node -e "JSON.parse(require('fs').readFileSync('bootstrap/settings.json'))"
+      - name: No real API keys in repo
+        run: "! grep -r 'sk-[a-zA-Z0-9]\\{40,\\}' bootstrap/ packages/ --include='*.json' --include='*.ts' 2>/dev/null && echo 'No keys leaked'"
