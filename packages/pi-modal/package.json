@@ -1,0 +1,21 @@
+{
+  "name": "pi-modal",
+  "version": "0.1.0",
+  "description": "Modal provider — GLM-5-FP8 & GLM-5.1-FP8",
+  "keywords": [
+    "pi-package",
+    "modal",
+    "provider",
+    "models"
+  ],
+  "license": "MIT",
+  "author": "pi-powerkit contributors",
+  "pi": {
+    "extensions": [
+      "extensions/modal-provider.ts"
+    ]
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}

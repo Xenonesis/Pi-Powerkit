@@ -34,21 +34,40 @@ Just ask in natural language — the LLM will use the `browser` tool:
 ```
 
 ## Commands (passed to `browser` tool)
-
 | Command | Purpose |
 |---------|---------|
 | `open <url>` | Navigate to URL |
 | `open <url> --headed` | Open with visible browser window |
-| `snapshot -i` | Get interactive elements with `@refs` |
-| `click <@ref>` | Click element |
-| `fill <@ref> <text>` | Clear and type |
-| `type <@ref> <text>` | Type without clearing |
-| `select <@ref> <value>` | Select dropdown |
-| `press <key>` | Press key (Enter, Tab, etc.) |
-| `scroll <dir> [px]` | Scroll up/down/left/right |
-| `get text\|url\|title [@ref]` | Get information |
-| `wait <@ref\|ms>` | Wait for element or time |
-| `screenshot [--full]` | Take screenshot (returns image) |
+| `snapshot [-i]` | Get interactive elements with `@ref`s |
+| `click <@ref\|sel>` | Click element by ref or CSS selector |
+| `fill <@ref\|sel> <text>` | Clear and type text |
+| `type <@ref\|sel> <text>` | Type without clearing |
+| `select <@ref\|sel> <value>` | Select dropdown by value/label |
+| `check <@ref\|sel>` | Check/uncheck a checkbox |
+| `hover <@ref\|sel>` | Hover over element |
+| `press <key>` | Press key (Enter, Tab, Escape, Arrow, etc.) |
+| `scroll <dir> [px]` | Scroll up/down/left/right/top/bottom |
+| `back` | Go back in history |
+| `forward` | Go forward in history |
+| `reload` | Reload page |
+| `url` | Get current page URL |
+| `title` | Get current page title |
+| `text` | Extract all visible text |
+| `screenshot [path]` | Take screenshot (returns image for vision models) |
+| `wait <selector\|ms>` | Wait for element to appear or time in ms |
+| `wait --text "..."` | Wait for text to appear on page |
+| `wait --url "**/pattern"` | Wait for URL to match pattern |
+| `wait --load networkidle` | Wait for page to finish loading |
+| `wait --fn "js-expr"` | Wait for JavaScript condition |
+| `find <type> <target> <action> [value]` | Semantic locators — by role, text, label, placeholder, alt, testid |
+| `cookies` | Get/set/clear/import cookies for auth persistence |
+| `storage local` | Get/set/clear localStorage |
+| `storage session` | Get/set/clear sessionStorage |
+| `network` | List network requests |
+| `network block <pattern>` | Block requests (e.g. images, CSS for speed) |
+| `diff snapshot` | Compare current vs last snapshot |
+| `diff url <url1> <url2>` | Compare two pages |
+| `evaluate <js-expr>` | Run arbitrary JavaScript in page context |
 | `close` | Close browser |
 
 ## How it works

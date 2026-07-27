@@ -1,0 +1,21 @@
+{
+  "name": "pi-aihubmix",
+  "version": "0.1.0",
+  "description": "25 free coding models via AIHubMix (GLM, Kimi, Gemini, GPT-OSS, Nemotron, MiMo, Gemma, Qwen + more)",
+  "keywords": [
+    "pi-package",
+    "aihubmix",
+    "provider",
+    "models"
+  ],
+  "license": "MIT",
+  "author": "pi-powerkit contributors",
+  "pi": {
+    "extensions": [
+      "extensions/aihubmix-provider.ts"
+    ]
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "pi-xiaomi",
+  "version": "0.1.0",
+  "description": "Xiaomi MiMo provider — mimo-v2.5 & mimo-v2.5-pro (1M context)",
+  "keywords": [
+    "pi-package",
+    "xiaomi",
+    "provider",
+    "models"
+  ],
+  "license": "MIT",
+  "author": "pi-powerkit contributors",
+  "pi": {
+    "extensions": [
+      "extensions/xiaomi-provider.ts"
+    ]
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}

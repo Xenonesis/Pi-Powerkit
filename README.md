@@ -23,7 +23,14 @@
 | **[pi-agent-browser](./packages/pi-agent-browser)** | LLM-driven browser automation via `agent-browser` CLI. Visual feedback with vision-capable models. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-agent-browser` |
 | **[pi-cline-free](./packages/pi-cline-free)** | 11 verified-working Cline free models + 1 TokenRouter model. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-cline-free` |
 | **[pi-opencode-free](./packages/pi-opencode-free)** | Dynamic OpenCode Zen free model fetcher with cached lookup. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-opencode-free` |
-| **[pi-headroom](./packages/pi-headroom)** | Context compression via Headroom (60–95% token savings). | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-headroom` |
+| **[pi-headroom](./packages/pi-headroom)** | Context compression via Headroom (60–95% token savings). *Optional — uses extra RAM.* | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-headroom` |
+| **[pi-agentrouter](./packages/pi-agentrouter)** | AgentRouter provider with 5 premium models (GPT-5.5, Claude Opus 4.6/7/8, GLM-5.2). | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-agentrouter` |
+| **[pi-kilocode](./packages/pi-kilocode)** | 10 KiloCode free models for pi — auto-verified. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-kilocode` |
+| **[pi-aihubmix](./packages/pi-aihubmix)** | 25 free coding models via AIHubMix (GLM, Kimi, Gemini, GPT-OSS, Nemotron, MiMo, Gemma, Qwen + more). | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-aihubmix` |
+| **[pi-router9](./packages/pi-router9)** | Router9 provider — MiniMax M3 model with 1M context. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-router9` |
+| **[pi-xiaomi](./packages/pi-xiaomi)** | Xiaomi MiMo provider — mimo-v2.5 & mimo-v2.5-pro (1M context). | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-xiaomi` |
+| **[pi-databricks](./packages/pi-databricks)** | Databricks provider — system.ai.glm-5-2 model. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-databricks` |
+| **[pi-modal](./packages/pi-modal)** | Modal provider — GLM-5-FP8 & GLM-5.1-FP8 models. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-modal` |
 
 ## Install everything
 
@@ -31,10 +38,12 @@
 pi install git:github.com/Xenonesis/Pi-Powerkit
 ```
 
+> **Note:** pi-headroom is optional — it runs a local compression service that uses extra RAM. Skip if you're on a tight system.
+
 ## Features
 
 - 🤖 **LLM-driven browser** — your AI can browse the web, take screenshots, click buttons, fill forms
-- 🆓 **20+ free models** — across Cline, OpenCode Zen, TokenRouter
+- 🆓 **50+ free models** — across AIHubMix (25), Cline (11), OpenCode Zen (6), KiloCode (10), TokenRouter
 - 👁️ **Visual feedback** — vision-capable models can see and describe screenshots
 - ⚡ **Cached & dynamic** — instant startup, auto-refreshes free model lists
 - 🔒 **Self-hosted** — everything runs locally, your data stays with you
@@ -50,8 +59,13 @@ export CLINE_API_KEY="sk_..."
 export OPENCODE_API_KEY="sk-..."
 export TOKENROUTER_API_KEY="sk-..."
 export NVIDIA_NIM_API_KEY="nvapi-..."   # optional
+export AIHUBMIX_API_KEY="sk-..."
+export ROUTER9_API_KEY="sk-..."
+export XIAOMI_API_KEY="sk-..."
+export DATABRICKS_API_KEY="dapi..."
+export MODAL_API_KEY="sk-..."
 
-# Headroom (optional, for context compression)
+# Headroom (optional, for context compression — uses extra RAM)
 export HEADROOM_API_URL="http://127.0.0.1:8787"
 export HEADROOM_API_KEY="sk-..."
 
@@ -107,6 +121,24 @@ Configure with:
 ```bash
 export HEADROOM_API_URL="http://127.0.0.1:8787"   # default proxy
 export HEADROOM_API_KEY="sk-..."                     # optional for cloud
+
+## QuickJS Compatibility (pi_agent_rust)
+
+| Package | Works with pi_agent_rust (QuickJS)? | Notes |
+|---------|:---:|-------|
+| pi-agent-browser | ❌ | Uses \`node:child_process\` (spawn) — needs native Node |
+| pi-cline-free | ✅ | Env var + registerProvider — pure JS, no Node deps |
+| pi-opencode-free | ❌ | Uses \`node:fs\`, \`node:path\`, \`node:os\` for cache |
+| pi-headroom | ✅ | Env var + fetch — pure JS (if avoid node:fs) |
+| pi-agentrouter | ✅ | Env var + registerProvider — pure JS |
+| pi-kilocode | ✅ | Env var + registerProvider — pure JS |
+| pi-aihubmix | ✅ | Env var + registerProvider — pure JS |
+| pi-router9 | ✅ | Env var + registerProvider — pure JS |
+| pi-xiaomi | ✅ | Env var + registerProvider — pure JS |
+| pi-databricks | ✅ | Env var + registerProvider — pure JS |
+| pi-modal | ✅ | Env var + registerProvider — pure JS |
+
+> Most provider extensions work with pi_agent_rust because they only use \`registerProvider()\` and env vars. Browser and cache-based extensions need Node.js.
 
 ## Setup details
 

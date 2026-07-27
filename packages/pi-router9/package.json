@@ -1,0 +1,21 @@
+{
+  "name": "pi-router9",
+  "version": "0.1.0",
+  "description": "Router9 provider — MiniMax M3 model (1M context)",
+  "keywords": [
+    "pi-package",
+    "router9",
+    "provider",
+    "models"
+  ],
+  "license": "MIT",
+  "author": "pi-powerkit contributors",
+  "pi": {
+    "extensions": [
+      "extensions/router9-provider.ts"
+    ]
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}

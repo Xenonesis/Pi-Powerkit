@@ -1,0 +1,21 @@
+{
+  "name": "pi-databricks",
+  "version": "0.1.0",
+  "description": "Databricks provider — system.ai.glm-5-2 model",
+  "keywords": [
+    "pi-package",
+    "databricks",
+    "provider",
+    "models"
+  ],
+  "license": "MIT",
+  "author": "pi-powerkit contributors",
+  "pi": {
+    "extensions": [
+      "extensions/databricks-provider.ts"
+    ]
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}

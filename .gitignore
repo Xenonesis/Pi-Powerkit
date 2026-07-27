@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Cache files (opencode-free writes here)
+cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+
+# Environment files
+.env
+.env.local
