@@ -31,6 +31,7 @@ export default function (pi: ExtensionAPI) {
 
   pi.registerProvider("modal", {
     name: "Modal",
+    api: "openai-completions",
     baseUrl: "https://api.modal.com/v1",
     apiKey: API_KEY,
     models: MODELS

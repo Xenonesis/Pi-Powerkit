@@ -21,11 +21,11 @@
 | Package | Description | Install |
 |---------|-------------|---------|
 | **[pi-agent-browser](./packages/pi-agent-browser)** | LLM-driven browser automation via `agent-browser` CLI. Visual feedback with vision-capable models. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-agent-browser` |
-| **[pi-cline-free](./packages/pi-cline-free)** | 11 verified-working Cline free models + 1 TokenRouter model. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-cline-free` |
+| **[pi-cline-free](./packages/pi-cline-free)** | 11 verified-working Cline free models. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-cline-free` |
 | **[pi-opencode-free](./packages/pi-opencode-free)** | Dynamic OpenCode Zen free model fetcher with cached lookup. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-opencode-free` |
 | **[pi-headroom](./packages/pi-headroom)** | Context compression via Headroom (60–95% token savings). *Optional — uses extra RAM.* | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-headroom` |
 | **[pi-agentrouter](./packages/pi-agentrouter)** | AgentRouter provider with 5 premium models (GPT-5.5, Claude Opus 4.6/7/8, GLM-5.2). | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-agentrouter` |
-| **[pi-kilocode](./packages/pi-kilocode)** | 10 KiloCode free models for pi — auto-verified. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-kilocode` |
+| **[pi-kilocode](./packages/pi-kilocode)** | 5 KiloCode free models for pi — auto-verified. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-kilocode` |
 | **[pi-aihubmix](./packages/pi-aihubmix)** | 25 free coding models via AIHubMix (GLM, Kimi, Gemini, GPT-OSS, Nemotron, MiMo, Gemma, Qwen + more). | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-aihubmix` |
 | **[pi-router9](./packages/pi-router9)** | Router9 provider — MiniMax M3 model with 1M context. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-router9` |
 | **[pi-xiaomi](./packages/pi-xiaomi)** | Xiaomi MiMo provider — mimo-v2.5 & mimo-v2.5-pro (1M context). | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-xiaomi` |
@@ -33,6 +33,7 @@
 | **[pi-modal](./packages/pi-modal)** | Modal provider — GLM-5-FP8 & GLM-5.1-FP8 models. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-modal` |
 | **[pi-ddg-search](./packages/pi-ddg-search)** | Free web search via DuckDuckGo — no API key required. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-ddg-search` |
 | **[pi-ssh](./packages/pi-ssh)** | SSH remote execution — run read/write/edit/bash on remote machines. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-ssh` |
+| **[pi-permission-gate](./packages/pi-permission-gate)** | Permission enforcement hooks for tool approvals. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-permission-gate` |
 
 ## Install everything (alternative)
 
@@ -60,7 +61,7 @@ This installs all 14 packages. You still need to set API keys via `.env` or `mod
 
 - 🌐 **Web search** — free DuckDuckGo search, no API key
 - 🤖 **LLM-driven browser** — your AI can browse the web, take screenshots, click buttons, fill forms
-- 🆓 **50+ free models** — across AIHubMix (25), Cline (11), OpenCode Zen (6), KiloCode (10), TokenRouter
+- 🆓 **50+ free models** — across AIHubMix (25), Cline (11), OpenCode Zen (7), KiloCode (5)
 - 👁️ **Visual feedback** — vision-capable models can see and describe screenshots
 - ⚡ **Cached & dynamic** — instant startup, auto-refreshes free model lists
 - 🔒 **Self-hosted** — everything runs locally, your data stays with you

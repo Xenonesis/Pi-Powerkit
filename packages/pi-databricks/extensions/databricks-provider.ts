@@ -22,6 +22,7 @@ export default function (pi: ExtensionAPI) {
 
   pi.registerProvider("databricks", {
     name: "Databricks",
+    api: "openai-completions",
     baseUrl: "https://dbc-3e029138-076b.cloud.databricks.com/ai-gateway/mlflow/v1",
     apiKey: API_KEY,
     models: MODELS

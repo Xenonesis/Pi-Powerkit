@@ -31,6 +31,7 @@ export default function (pi: ExtensionAPI) {
 
   pi.registerProvider("xiaomi", {
     name: "Xiaomi",
+    api: "openai-completions",
     baseUrl: "https://api.xiaomimimo.com/v1",
     apiKey: API_KEY,
     models: MODELS

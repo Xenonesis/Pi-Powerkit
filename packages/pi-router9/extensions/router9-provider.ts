@@ -22,6 +22,7 @@ export default function (pi: ExtensionAPI) {
 
   pi.registerProvider("router9", {
     name: "Router9",
+    api: "openai-completions",
     baseUrl: "https://api.router9.com/v1",
     apiKey: API_KEY,
     models: MODELS
