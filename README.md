@@ -31,6 +31,8 @@
 | **[pi-xiaomi](./packages/pi-xiaomi)** | Xiaomi MiMo provider — mimo-v2.5 & mimo-v2.5-pro (1M context). | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-xiaomi` |
 | **[pi-databricks](./packages/pi-databricks)** | Databricks provider — system.ai.glm-5-2 model. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-databricks` |
 | **[pi-modal](./packages/pi-modal)** | Modal provider — GLM-5-FP8 & GLM-5.1-FP8 models. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-modal` |
+| **[pi-ddg-search](./packages/pi-ddg-search)** | Free web search via DuckDuckGo — no API key required. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-ddg-search` |
+| **[pi-ssh](./packages/pi-ssh)** | SSH remote execution — run read/write/edit/bash on remote machines. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-ssh` |
 
 ## Install everything (alternative)
 
