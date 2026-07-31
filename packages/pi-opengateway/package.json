@@ -1,0 +1,14 @@
+{
+  "name": "pi-opengateway",
+  "version": "0.1.0",
+  "description": "OpenGateway (gitlawb.com) provider with free models for pi",
+  "keywords": ["pi-package", "opengateway", "free-models", "provider"],
+  "license": "MIT",
+  "author": "pi-powerkit contributors",
+  "pi": {
+    "extensions": ["extensions/opengateway-provider.ts"]
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}
