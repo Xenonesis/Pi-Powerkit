@@ -41,17 +41,8 @@ export default function (pi: ExtensionAPI) {
         maxTokens: 65536,
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
       },
-      {
-        id: "tencent/hy3",
-        name: "Tencent HY3",
-        reasoning: true,
-        input: ["text"],
-        contextWindow: 262144,
-        maxTokens: 65536,
-        cost: { input: 0.2, output: 0.8, cacheRead: 0.05, cacheWrite: 0 },
-      },
     ],
   });
 
-  console.log("[pi-opengateway] Registered 4 models (3 free + hy3)");
+  console.log("[pi-opengateway] Registered 3 free models");
 }

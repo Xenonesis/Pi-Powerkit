@@ -96,7 +96,6 @@ PROVIDERS = [
             {"id": "inclusionai/ling-3.0-flash:free", "name": "Ling 3.0 Flash (Free)", "reasoning": True, "ctx": 262144, "out": 65536, "input": ["text"]},
             {"id": "nvidia/nemotron-3-ultra-550b-a55b:free", "name": "Nemotron 3 Ultra (Free)", "reasoning": True, "ctx": 131072, "out": 65536, "input": ["text"]},
             {"id": "mindai/macaron-v1-tall", "name": "Macaron V1 Tall (Free)", "reasoning": True, "ctx": 262144, "out": 65536, "input": ["text"]},
-            {"id": "tencent/hy3", "name": "Tencent HY3", "reasoning": True, "ctx": 262144, "out": 65536, "input": ["text"]},
         ],
     },
     {
