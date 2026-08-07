@@ -20,8 +20,8 @@ export default function (pi: ExtensionAPI) {
         reasoning: true,
         input: ["text"],
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-        contextWindow: 128000,
-        maxTokens: 32000,
+        contextWindow: 1048576,
+        maxTokens: 131072,
       },
       {
         id: "stepfun/step-3.7-flash",
@@ -30,7 +30,7 @@ export default function (pi: ExtensionAPI) {
         input: ["text"],
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
         contextWindow: 262144,
-        maxTokens: 65536,
+        maxTokens: 256000,
       },
       {
         id: "poolside/laguna-s-2.1:free",
@@ -38,7 +38,7 @@ export default function (pi: ExtensionAPI) {
         reasoning: false,
         input: ["text"],
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-        contextWindow: 256000,
+        contextWindow: 262144,
         maxTokens: 32768,
       },
     ],

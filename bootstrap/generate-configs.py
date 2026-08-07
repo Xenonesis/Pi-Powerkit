@@ -52,9 +52,9 @@ PROVIDERS = [
         "envKey": "KILO_API_KEY",
         "models": [
             {"id": "kilo-auto/free", "name": "Kilo Auto (free)", "reasoning": True, "ctx": 128000, "out": 65536, "input": ["text"]},
-            {"id": "stepfun/step-3.7-flash:free", "name": "StepFun Step 3.7 Flash (free)", "reasoning": True, "ctx": 262144, "out": 65536, "input": ["text"]},
+            {"id": "stepfun/step-3.7-flash:free", "name": "StepFun Step 3.7 Flash (free)", "reasoning": True, "ctx": 262144, "out": 256000, "input": ["text"]},
             {"id": "nvidia/nemotron-3-ultra-550b-a55b:free", "name": "NVIDIA Nemotron 3 Ultra 550B (free)", "reasoning": True, "ctx": 1000000, "out": 65536, "input": ["text"]},
-            {"id": "nvidia/nemotron-3-super-120b-a12b:free", "name": "NVIDIA Nemotron 3 Super 120B (free)", "reasoning": True, "ctx": 1000000, "out": 262144, "input": ["text"]},
+            {"id": "nvidia/nemotron-3-super-120b-a12b:free", "name": "NVIDIA Nemotron 3 Super 120B (free)", "reasoning": True, "ctx": 262144, "out": 262144, "input": ["text"]},
             {"id": "openrouter/free", "name": "OpenRouter Free", "reasoning": True, "ctx": 200000, "out": 8192, "input": ["text"]},
         ],
     },
@@ -93,8 +93,8 @@ PROVIDERS = [
         "baseUrl": "https://opengateway.gitlawb.com/v1",
         "envKey": "OPENGATEWAY_API_KEY",
         "models": [
-            {"id": "inclusionai/ling-3.0-flash:free", "name": "Ling 3.0 Flash (Free)", "reasoning": True, "ctx": 262144, "out": 65536, "input": ["text"]},
-            {"id": "nvidia/nemotron-3-ultra-550b-a55b:free", "name": "Nemotron 3 Ultra (Free)", "reasoning": True, "ctx": 131072, "out": 65536, "input": ["text"]},
+            {"id": "inclusionai/ling-3.0-flash:free", "name": "Ling 3.0 Flash (Free)", "reasoning": True, "ctx": 262144, "out": 32768, "input": ["text"]},
+            {"id": "nvidia/nemotron-3-ultra-550b-a55b:free", "name": "Nemotron 3 Ultra (Free)", "reasoning": True, "ctx": 1000000, "out": 65536, "input": ["text"]},
             {"id": "mindai/macaron-v1-tall", "name": "Macaron V1 Tall (Free)", "reasoning": True, "ctx": 262144, "out": 65536, "input": ["text"]},
         ],
     },
@@ -159,9 +159,9 @@ PROVIDERS = [
         "baseUrl": "https://api.cline.bot/api/v1",
         "envKey": "CLINE_API_KEY",
         "models": [
-            {"id": "deepseek-ai/deepseek-v4-flash", "name": "DeepSeek V4 Flash (Free)", "reasoning": True, "ctx": 128000, "out": 32000, "input": ["text"]},
-            {"id": "stepfun/step-3.7-flash", "name": "StepFun Step 3.7 Flash (Free)", "reasoning": True, "ctx": 262144, "out": 65536, "input": ["text"]},
-            {"id": "poolside/laguna-s-2.1:free", "name": "Laguna S 2.1 (Free)", "reasoning": False, "ctx": 256000, "out": 32768, "input": ["text"]},
+            {"id": "deepseek-ai/deepseek-v4-flash", "name": "DeepSeek V4 Flash (Free)", "reasoning": True, "ctx": 1048576, "out": 131072, "input": ["text"]},
+            {"id": "stepfun/step-3.7-flash", "name": "StepFun Step 3.7 Flash (Free)", "reasoning": True, "ctx": 262144, "out": 256000, "input": ["text"]},
+            {"id": "poolside/laguna-s-2.1:free", "name": "Laguna S 2.1 (Free)", "reasoning": False, "ctx": 262144, "out": 32768, "input": ["text"]},
         ],
     },
 ]

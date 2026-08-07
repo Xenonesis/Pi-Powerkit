@@ -20,7 +20,7 @@ export default function (pi: ExtensionAPI) {
         reasoning: true,
         input: ["text"],
         contextWindow: 262144,
-        maxTokens: 65536,
+        maxTokens: 32768,
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
       },
       {
@@ -28,7 +28,7 @@ export default function (pi: ExtensionAPI) {
         name: "Nemotron 3 Ultra (Free)",
         reasoning: true,
         input: ["text"],
-        contextWindow: 131072,
+        contextWindow: 1000000,
         maxTokens: 65536,
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
       },
