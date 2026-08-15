@@ -1,5 +1,6 @@
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 import { defineTool } from "@earendil-works/pi-coding-agent";
+import { Type } from "typebox";
 
 export default function registerHeadroomExtension(pi: ExtensionAPI) {
   const API_URL = process.env.HEADROOM_API_URL || "http://127.0.0.1:8787";
@@ -7,35 +8,15 @@ export default function registerHeadroomExtension(pi: ExtensionAPI) {
 
   pi.registerTool(
     defineTool({
-      name: "headroom.compress",
+      name: "headroom_compress",
       description:
         "Compress text or messages using Headroom to reduce token usage (60-95% savings). Use this when context is getting large.",
-      schema: {
-        input: {
-          type: "object",
-          properties: {
-            text: {
-              type: "string",
-              description: "The text/messages to compress",
-            },
-            model: {
-              type: "string",
-              description: "Model to use for compression (default: gpt-4o-mini)",
-            },
-          },
-          required: ["text"],
-        },
-        output: {
-          type: "object",
-          properties: {
-            compressed: { type: "string" },
-            originalTokens: { type: "number" },
-            compressedTokens: { type: "number" },
-            savedPercent: { type: "number" },
-            error: { type: "string" },
-          },
-        },
-      },
+      parameters: Type.Object({
+        text: Type.String({ description: "The text/messages to compress" }),
+        model: Type.Optional(
+          Type.String({ description: "Model to use for compression (default: gpt-4o-mini)" })
+        ),
+      }),
       async execute({ text, model = "gpt-4o-mini" }) {
         try {
           const res = await fetch(`${API_URL}/compress`, {
@@ -82,19 +63,9 @@ export default function registerHeadroomExtension(pi: ExtensionAPI) {
 
   pi.registerTool(
     defineTool({
-      name: "headroom.status",
+      name: "headroom_status",
       description: "Check if Headroom proxy/cloud is reachable.",
-      schema: {
-        input: { type: "object", properties: {} },
-        output: {
-          type: "object",
-          properties: {
-            reachable: { type: "boolean" },
-            url: { type: "string" },
-            error: { type: "string" },
-          },
-        },
-      },
+      parameters: Type.Object({}),
       async execute() {
         try {
           const res = await fetch(`${API_URL}/health`, {
