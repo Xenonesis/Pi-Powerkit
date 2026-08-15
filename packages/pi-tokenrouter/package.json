@@ -1,0 +1,21 @@
+{
+  "name": "pi-tokenrouter",
+  "version": "0.1.0",
+  "description": "TokenRouter free model provider for Pi coding agent (qwen/qwen3.8-max-free)",
+  "license": "MIT",
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": ">=0.1.0"
+  },
+  "keywords": [
+    "pi",
+    "tokenrouter",
+    "free-models",
+    "provider",
+    "qwen"
+  ],
+  "pi": {
+    "extensions": [
+      "extensions/tokenrouter-provider.ts"
+    ]
+  }
+}
