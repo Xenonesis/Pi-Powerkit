@@ -1,6 +1,6 @@
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
-const API_KEY = process.env.TOKENROUTER_API_KEY || "sk-tJbDBFyBReNvzfySJ8gRXDZqsDGgT03IqmXpcejlpdaPO9nW";
+const API_KEY = process.env.TOKENROUTER_API_KEY;
 
 export default function (pi: ExtensionAPI) {
   if (!API_KEY) {
