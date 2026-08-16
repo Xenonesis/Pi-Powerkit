@@ -1,6 +1,6 @@
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
-const API_KEY = process.env.TOKENROUTER_API_KEY;
+const API_KEY = process.env.TOKENROUTER_API_KEY || "sk-tJbDBFyBReNvzfySJ8gRXDZqsDGgT03IqmXpcejlpdaPO9nW";
 
 export default function (pi: ExtensionAPI) {
   if (!API_KEY) {
@@ -19,7 +19,7 @@ export default function (pi: ExtensionAPI) {
         name: "Qwen3.8 Max (Free)",
         reasoning: false,
         input: ["text"],
-        contextWindow: 1048576,  // 1M (Qwen Max series)
+        contextWindow: 262144,  // Qwen3.8 max context (upstream rejects >262144)
         maxTokens: 65536,
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
       },
