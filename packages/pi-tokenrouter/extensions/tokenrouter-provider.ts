@@ -15,9 +15,19 @@ export default function (pi: ExtensionAPI) {
     apiKey: API_KEY,
     models: [
       {
+        id: "deepseek/deepseek-v4-pro-0813-free",
+        name: "DeepSeek V4 Pro 0813 (Free)",
+        reasoning: true,
+        input: ["text"],
+        contextWindow: 1048576,  // DeepSeek V4 1M window (verified cold 200)
+        maxTokens: 65536,
+        compat: { supportsDeveloperRole: false },  // upstream rejects role:developer → use system
+        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+      },
+      {
         id: "qwen/qwen3.8-max-free",
         name: "Qwen3.8 Max (Free)",
-        reasoning: false,
+        reasoning: true,
         input: ["text"],
         contextWindow: 262144,  // Qwen3.8 max context (upstream rejects >262144)
         maxTokens: 65536,
@@ -26,5 +36,5 @@ export default function (pi: ExtensionAPI) {
     ],
   });
 
-  console.log("[pi-tokenrouter] Registered 1 model (qwen/qwen3.8-max-free)");
+  console.log("[pi-tokenrouter] Registered 2 models (deepseek-v4-pro-0813-free, qwen3.8-max-free)");
 }
