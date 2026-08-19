@@ -33,3 +33,24 @@ pi --model tokenrouter/qwen/qwen3.8-max-free
   schema** (via `Type.Object`) or the upstream rejects the entire request with a 422. This
   was the root cause of earlier failures (`headroom_*` tools lacking `parameters`).
 - API keys are passed via `process.env.TOKENROUTER_API_KEY` — never hardcoded in this repo.
+## Known issue: multi-turn tool-call 400 on DeepSeek
+
+TokenRouter's DeepSeek upstream requires **non-empty `reasoning_content`** on assistant
+messages when replaying a thinking tool-call history. Pi's compiled OpenAI adapter
+(`openai-completions.js`, ~line 976) sets `reasoning_content = ""` (empty) when no
+thinking was captured, which the upstream rejects with:
+
+```
+400 messages[N].reasoning_content is required for thinking tool-call history
+```
+
+**Workaround (applied locally):** patch the compiled adapter to use a non-empty
+placeholder (a single space) instead of `""`:
+
+```js
+// dist/api/openai-completions.js
+assistantMsg.reasoning_content = " ";  // non-empty placeholder
+```
+
+Any non-empty string satisfies the upstream. **Note:** this is a patch to a compiled
+node_modules file — a `pi update` will reset it and the patch must be re-applied.
