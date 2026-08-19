@@ -21,7 +21,11 @@ export default function (pi: ExtensionAPI) {
         input: ["text"],
         contextWindow: 1048576,  // DeepSeek V4 1M window (verified cold 200)
         maxTokens: 65536,
-        compat: { supportsDeveloperRole: false },  // upstream rejects role:developer → use system
+        compat: {
+          supportsDeveloperRole: false,  // upstream rejects role:developer → use system
+          requiresReasoningContentOnAssistantMessages: true,  // thinking tool-call history needs reasoning text
+          thinkingFormat: "deepseek",
+        },
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
       },
       {
