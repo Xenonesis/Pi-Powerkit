@@ -31,6 +31,7 @@ export default function (pi: ExtensionAPI) {
         input: ["text"],
         contextWindow: 262144,  // Qwen3.8 max context (upstream rejects >262144)
         maxTokens: 65536,
+        compat: { supportsDeveloperRole: false },  // upstream rejects role:developer → use system
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
       },
     ],
