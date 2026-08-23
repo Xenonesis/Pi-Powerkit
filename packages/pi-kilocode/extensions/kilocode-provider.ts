@@ -20,13 +20,17 @@ const FALLBACK_MODELS: Record<string, { ctx: number; out: number; reason: boolea
   "stepfun/step-3.7-flash:free":            { ctx: 262144,  out: 262144, reason: false, input: ["text", "image"] },
   "poolside/laguna-s-2.1:free":             { ctx: 262144,  out: 32768,  reason: false, input: ["text"] },
   "tencent/hy3:free":                       { ctx: 262144,  out: 128000, reason: false, input: ["text"] },
-  "inclusionai/ling-3.0-tiny:free":         { ctx: 262144,  out: 32768,  reason: false, input: ["text"] },
+  "dots-studio/dots-3-note-preview:free":   { ctx: 512000,  out: 512000, reason: false, input: ["text"] },
+  "liquid/lfm-2.5-2.6b:free":               { ctx: 65536,   out: 8192,   reason: false, input: ["text"] },
+  "nvidia/nemotron-3.5-lightning:free":     { ctx: 1000000, out: 65536,  reason: false, input: ["text"] },
   "poolside/laguna-xs-2.1:free":            { ctx: 262144,  out: 32768,  reason: false, input: ["text"] },
   "cohere/north-mini-code:free":            { ctx: 256000,  out: 64000,  reason: false, input: ["text"] },
   "nvidia/nemotron-3-ultra-550b-a55b:free": { ctx: 1000000, out: 65536,  reason: false, input: ["text"] },
   "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": { ctx: 256000, out: 65536, reason: false, input: ["text", "image"] },
   "nvidia/nemotron-3-super-120b-a12b:free": { ctx: 262144,  out: 262144, reason: false, input: ["text"] },
   "openrouter/free":                        { ctx: 200000,  out: 8192,   reason: false, input: ["text", "image"] },
+  "meituan/longcat-2.0-free":               { ctx: 1048576, out: 131072, reason: false, input: ["text"] },
+  "stealth/ox-alpha":                       { ctx: 1048576, out: 131072, reason: false, input: ["text"] },
 };
 
 interface CachedData {
