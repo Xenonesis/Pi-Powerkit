@@ -8,7 +8,7 @@ const BASE_URL = "https://opencode.ai/zen/v1";
 const CACHE_PATH = join(homedir(), ".pi", "agent", "cache", "opencode-free.json");
 
 // ponytail: hardcoded context windows for known free models (used as fallback + overrides)
-const MODEL_CONTEXTS: Record<string, { ctx: number; out: number; reason: boolean; input: string[] }> = {
+const MODEL_CONTEXTS: Record<string, { ctx: number; out: number; reason: boolean; input: string[]; thinkingLevelMap?: Record<string, string> }> = {
   "deepseek-v4-flash-free":   { ctx: 1048576, out: 128000, reason: true,  input: ["text"] },
   "mimo-v2.5-free":           { ctx: 1048576, out: 131000, reason: true,  input: ["text", "image"] },
   "nemotron-3-ultra-free":    { ctx: 1000000, out: 16384,  reason: true,  input: ["text"] },
@@ -16,6 +16,12 @@ const MODEL_CONTEXTS: Record<string, { ctx: number; out: number; reason: boolean
   "qwen3.6-plus-free":        { ctx: 1048576, out: 128000, reason: true,  input: ["text"] },
   "minimax-m3-free":          { ctx: 1048576, out: 512000, reason: true,  input: ["text"] },
   "big-pickle":               { ctx: 1048576, out: 128000, reason: true,  input: ["text"] },
+  "hy3-free":                 { ctx: 1048576, out: 128000, reason: true,  input: ["text"] },
+  "laguna-s-2.1-free":        { ctx: 1048576, out: 128000, reason: true,  input: ["text"] },
+  "muse-spark-1.2-contributor-free": { ctx: 1048576, out: 128000, reason: true, input: ["text"] },
+  "nemotron-3.5-lightning-free": { ctx: 1048576, out: 128000, reason: true, input: ["text"] },
+  // x-preview-f only accepts low/high/max — remap pi's default medium to max
+  "x-preview-f-free":         { ctx: 1048576, out: 128000, reason: true,  input: ["text"], thinkingLevelMap: { medium: "max" } },
 };
 
 interface CachedData {
@@ -91,6 +97,7 @@ export default async function (pi: ExtensionAPI) {
       input: MODEL_CONTEXTS[id]?.input ?? ["text"],
       contextWindow: MODEL_CONTEXTS[id]?.ctx ?? 1048576,
       maxTokens: MODEL_CONTEXTS[id]?.out ?? 128000,
+      thinkingLevelMap: MODEL_CONTEXTS[id]?.thinkingLevelMap,
       cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
     })),
   });

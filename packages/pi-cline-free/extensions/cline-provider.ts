@@ -15,6 +15,15 @@ export default function (pi: ExtensionAPI) {
     api: "openai-completions",
     models: [
       {
+        id: "stealth/ox-alpha",
+        name: "Ox Alpha (Free)",
+        reasoning: true,
+        input: ["text"],
+        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+        contextWindow: 1048576,
+        maxTokens: 131072,
+      },
+      {
         id: "deepseek-ai/deepseek-v4-flash",
         name: "DeepSeek V4 Flash (Free)",
         reasoning: true,
