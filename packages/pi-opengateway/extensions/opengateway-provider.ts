@@ -15,15 +15,6 @@ export default function (pi: ExtensionAPI) {
     apiKey: API_KEY,
     models: [
       {
-        id: "inclusionai/ling-3.0-flash:free",
-        name: "Ling 3.0 Flash (Free)",
-        reasoning: true,
-        input: ["text"],
-        contextWindow: 262144,
-        maxTokens: 32768,
-        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-      },
-      {
         id: "nvidia/nemotron-3-ultra-550b-a55b:free",
         name: "Nemotron 3 Ultra (Free)",
         reasoning: true,
@@ -32,17 +23,8 @@ export default function (pi: ExtensionAPI) {
         maxTokens: 65536,
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
       },
-      {
-        id: "mindai/macaron-v1-tall",
-        name: "Macaron V1 Tall (Free)",
-        reasoning: true,
-        input: ["text"],
-        contextWindow: 262144,
-        maxTokens: 65536,
-        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-      },
     ],
   });
 
-  console.log("[pi-opengateway] Registered 3 free models");
+  console.log("[pi-opengateway] Registered 1 free model");
 }
