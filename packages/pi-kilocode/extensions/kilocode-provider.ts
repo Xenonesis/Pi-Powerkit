@@ -32,7 +32,6 @@ const FALLBACK_MODELS: Record<string, { ctx: number; out: number; reason: boolea
   "meituan/longcat-2.0-free":              { ctx: 1048756, out: 131072, reason: false, input: ["text"] },
   "stealth/ox-alpha":                      { ctx: 1048576, out: 131072, reason: false, input: ["text"] },
   "minimax/minimax-m2.7:free":              { ctx: 196608,  out: 32768,  reason: false, input: ["text"] },
-  "minimax/minimax-m3:free":                { ctx: 1048576, out: 32768,  reason: false, input: ["text", "image", "video"] },
   "thinkingmachines/inkling-small:free":    { ctx: 1048576, out: 32768,  reason: false, input: ["text", "image", "audio"] },
   "thinkingmachines/inkling:free":          { ctx: 1048576, out: 32768,  reason: false, input: ["text", "image", "audio"] },
 };
