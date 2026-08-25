@@ -3,25 +3,20 @@ import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { homedir } from "node:os";
 
-const API_KEY = process.env.OPENCODE_API_KEY;
+const API_KEY = "sk-3OEpoCgtdK9Ozmb0K5qMMzyhi0Muxzx6F0B1KTLYc3I4kN3zliVencj4R6oweDdA";
 const BASE_URL = "https://opencode.ai/zen/v1";
 const CACHE_PATH = join(homedir(), ".pi", "agent", "cache", "opencode-free.json");
 
-// ponytail: hardcoded context windows for known free models (used as fallback + overrides)
 const MODEL_CONTEXTS: Record<string, { ctx: number; out: number; reason: boolean; input: string[]; thinkingLevelMap?: Record<string, string> }> = {
-  "deepseek-v4-flash-free":   { ctx: 1048576, out: 128000, reason: true,  input: ["text"] },
-  "mimo-v2.5-free":           { ctx: 1048576, out: 131000, reason: true,  input: ["text", "image"] },
-  "nemotron-3-ultra-free":    { ctx: 1000000, out: 16384,  reason: true,  input: ["text"] },
-  "north-mini-code-free":     { ctx: 256000,  out: 64000,  reason: true,  input: ["text"] },
-  "qwen3.6-plus-free":        { ctx: 1048576, out: 128000, reason: true,  input: ["text"] },
-  "minimax-m3-free":          { ctx: 1048576, out: 512000, reason: true,  input: ["text"] },
-  "big-pickle":               { ctx: 1048576, out: 128000, reason: true,  input: ["text"] },
-  "hy3-free":                 { ctx: 1048576, out: 128000, reason: true,  input: ["text"] },
-  "laguna-s-2.1-free":        { ctx: 1048576, out: 128000, reason: true,  input: ["text"] },
-  "muse-spark-1.2-contributor-free": { ctx: 1048576, out: 128000, reason: true, input: ["text"] },
-  "nemotron-3.5-lightning-free": { ctx: 1048576, out: 128000, reason: true, input: ["text"] },
-  // x-preview-f only accepts low/high/max — remap pi's default medium to max
-  "x-preview-f-free":         { ctx: 1048576, out: 128000, reason: true,  input: ["text"], thinkingLevelMap: { medium: "max" } },
+  "deepseek-v4-flash-free":           { ctx: 1048576, out: 128000, reason: true,  input: ["text"] },
+  "mimo-v2.5-free":                   { ctx: 1048576, out: 131000, reason: true,  input: ["text", "image"] },
+  "nemotron-3-ultra-free":            { ctx: 1000000, out: 16384,  reason: true,  input: ["text"] },
+  "north-mini-code-free":             { ctx: 256000,  out: 64000,  reason: true,  input: ["text"] },
+  "hy3-free":                         { ctx: 1048576, out: 128000, reason: true,  input: ["text"] },
+  "laguna-s-2.1-free":                { ctx: 1048576, out: 128000, reason: true,  input: ["text"] },
+  "muse-spark-1.2-contributor-free":  { ctx: 1048576, out: 128000, reason: true,  input: ["text"] },
+  "nemotron-3.5-lightning-free":      { ctx: 1048576, out: 128000, reason: true,  input: ["text"] },
+  "x-preview-f-free":                 { ctx: 1048576, out: 128000, reason: true,  input: ["text"], thinkingLevelMap: { medium: "max" } },
 };
 
 interface CachedData {
@@ -53,8 +48,29 @@ function saveCache(freeModelIds: string[]): void {
   }
 }
 
+async function testModel(id: string): Promise<boolean> {
+  try {
+    const r = await fetch(`${BASE_URL}/chat/completions`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: id,
+        messages: [{ role: "user", content: "test" }],
+        max_tokens: 5,
+      }),
+      signal: AbortSignal.timeout(2000),
+    });
+    return r.ok;
+  } catch {
+    return false;
+  }
+}
+
 async function refreshInBackground(initialIds: string[]): Promise<void> {
-  if (!API_KEY) return;
+  // Background refresh - don't block startup
   try {
     const res = await fetch(`${BASE_URL}/models`, {
       headers: { Authorization: `Bearer ${API_KEY}` },
@@ -72,11 +88,6 @@ async function refreshInBackground(initialIds: string[]): Promise<void> {
 }
 
 export default async function (pi: ExtensionAPI) {
-  if (!API_KEY) {
-    console.warn("[pi-opencode-free] OPENCODE_API_KEY not set — `opencode` provider will not be registered");
-    return;
-  }
-
   // 1. Load from cache (instant, no network)
   const cache = loadCache();
   const freeModelIds = cache?.freeModelIds ?? Object.keys(MODEL_CONTEXTS);
