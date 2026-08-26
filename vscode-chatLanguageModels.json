@@ -1,0 +1,304 @@
+[
+  {
+    "name": "KiloCode Free",
+    "vendor": "customendpoint",
+    "apiKey": "${env:KILO_API_KEY}",
+    "url": "https://api.kilo.ai/api/openrouter/v1",
+    "models": [
+      {
+        "id": "kilo-auto/free",
+        "name": "Kilo Auto Free",
+        "toolCalling": true,
+        "maxInputTokens": 256000,
+        "maxOutputTokens": 10000,
+        "streaming": true
+      },
+      {
+        "id": "stepfun/step-3.7-flash:free",
+        "name": "StepFun Step 3.7 Flash Free",
+        "toolCalling": true,
+        "maxInputTokens": 262144,
+        "maxOutputTokens": 262144,
+        "streaming": true
+      },
+      {
+        "id": "tencent/hy3:free",
+        "name": "Tencent HY3 Free",
+        "toolCalling": true,
+        "maxInputTokens": 262144,
+        "maxOutputTokens": 128000,
+        "streaming": true
+      },
+      {
+        "id": "poolside/laguna-s-2.1:free",
+        "name": "Laguna S 2.1 Free",
+        "toolCalling": true,
+        "maxInputTokens": 262144,
+        "maxOutputTokens": 32768,
+        "streaming": true
+      },
+      {
+        "id": "dots-studio/dots-3-note-preview:free",
+        "name": "Dots 3 Note Preview Free",
+        "toolCalling": true,
+        "maxInputTokens": 512000,
+        "maxOutputTokens": 512000,
+        "streaming": true
+      },
+      {
+        "id": "liquid/lfm-2.5-2.6b:free",
+        "name": "Liquid LFM 2.5 Free",
+        "toolCalling": true,
+        "maxInputTokens": 65536,
+        "maxOutputTokens": 8192,
+        "streaming": true
+      },
+      {
+        "id": "nvidia/nemotron-3.5-lightning:free",
+        "name": "Nemotron 3.5 Lightning Free",
+        "toolCalling": true,
+        "maxInputTokens": 1000000,
+        "maxOutputTokens": 65536,
+        "streaming": true
+      },
+      {
+        "id": "poolside/laguna-xs-2.1:free",
+        "name": "Laguna XS 2.1 Free",
+        "toolCalling": true,
+        "maxInputTokens": 262144,
+        "maxOutputTokens": 32768,
+        "streaming": true
+      },
+      {
+        "id": "cohere/north-mini-code:free",
+        "name": "North Mini Code Free",
+        "toolCalling": true,
+        "maxInputTokens": 256000,
+        "maxOutputTokens": 64000,
+        "streaming": true
+      },
+      {
+        "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "name": "Nemotron 3 Ultra Free",
+        "toolCalling": true,
+        "maxInputTokens": 1000000,
+        "maxOutputTokens": 65536,
+        "streaming": true
+      },
+      {
+        "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+        "name": "Nemotron 3 Nano Omni Free",
+        "toolCalling": true,
+        "maxInputTokens": 256000,
+        "maxOutputTokens": 65536,
+        "streaming": true,
+        "vision": true
+      },
+      {
+        "id": "nvidia/nemotron-3-super-120b-a12b:free",
+        "name": "Nemotron 3 Super Free",
+        "toolCalling": true,
+        "maxInputTokens": 262144,
+        "maxOutputTokens": 262144,
+        "streaming": true
+      },
+      {
+        "id": "openrouter/free",
+        "name": "OpenRouter Free",
+        "toolCalling": true,
+        "maxInputTokens": 200000,
+        "maxOutputTokens": 8192,
+        "streaming": true,
+        "vision": true
+      },
+      {
+        "id": "meituan/longcat-2.0-free",
+        "name": "LongCat 2.0 Free",
+        "toolCalling": true,
+        "maxInputTokens": 1048576,
+        "maxOutputTokens": 131072,
+        "streaming": true
+      },
+      {
+        "id": "stealth/ox-alpha",
+        "name": "Ox Alpha Free",
+        "toolCalling": true,
+        "maxInputTokens": 1048576,
+        "maxOutputTokens": 131072,
+        "thinking": true,
+        "streaming": true
+      },
+      {
+        "id": "thinkingmachines/inkling-small:free",
+        "name": "Inkling Small Free",
+        "toolCalling": true,
+        "maxInputTokens": 1048576,
+        "maxOutputTokens": 262144,
+        "streaming": true,
+        "vision": true
+      },
+      {
+        "id": "thinkingmachines/inkling:free",
+        "name": "Inkling Free",
+        "toolCalling": true,
+        "maxInputTokens": 1048576,
+        "maxOutputTokens": 262144,
+        "streaming": true,
+        "vision": true
+      },
+      {
+        "id": "minimax/minimax-m2.7:free",
+        "name": "MiniMax M2.7 Free",
+        "toolCalling": true,
+        "maxInputTokens": 196608,
+        "maxOutputTokens": 32768,
+        "streaming": true
+      }
+    ]
+  },
+  {
+    "name": "OpenCode Free",
+    "vendor": "customendpoint",
+    "apiKey": "${env:OPENCODE_API_KEY}",
+    "url": "https://opencode.ai/zen/v1",
+    "models": [
+      {
+        "id": "deepseek-v4-flash-free",
+        "name": "DeepSeek V4 Flash Free",
+        "toolCalling": true,
+        "maxInputTokens": 1048576,
+        "maxOutputTokens": 128000,
+        "thinking": true,
+        "streaming": true
+      },
+      {
+        "id": "mimo-v2.5-free",
+        "name": "Mimo V2.5 Free",
+        "toolCalling": true,
+        "maxInputTokens": 1048576,
+        "maxOutputTokens": 131000,
+        "thinking": true,
+        "streaming": true,
+        "vision": true
+      },
+      {
+        "id": "nemotron-3-ultra-free",
+        "name": "Nemotron 3 Ultra Free",
+        "toolCalling": true,
+        "maxInputTokens": 1000000,
+        "maxOutputTokens": 16384,
+        "thinking": true,
+        "streaming": true
+      },
+      {
+        "id": "hy3-free",
+        "name": "HY3 Free",
+        "toolCalling": true,
+        "maxInputTokens": 1048576,
+        "maxOutputTokens": 128000,
+        "thinking": true,
+        "streaming": true
+      },
+      {
+        "id": "laguna-s-2.1-free",
+        "name": "Laguna S 2.1 Free",
+        "toolCalling": true,
+        "maxInputTokens": 1048576,
+        "maxOutputTokens": 128000,
+        "thinking": true,
+        "streaming": true
+      },
+      {
+        "id": "muse-spark-1.2-contributor-free",
+        "name": "Muse Spark 1.2 Free",
+        "toolCalling": true,
+        "maxInputTokens": 1048576,
+        "maxOutputTokens": 128000,
+        "thinking": true,
+        "streaming": true
+      },
+      {
+        "id": "nemotron-3.5-lightning-free",
+        "name": "Nemotron 3.5 Lightning Free",
+        "toolCalling": true,
+        "maxInputTokens": 1048576,
+        "maxOutputTokens": 128000,
+        "thinking": true,
+        "streaming": true
+      },
+      {
+        "id": "x-preview-f-free",
+        "name": "X Preview F Free",
+        "toolCalling": true,
+        "maxInputTokens": 1048576,
+        "maxOutputTokens": 128000,
+        "thinking": true,
+        "streaming": true,
+        "supportsReasoningEffort": [
+          "low",
+          "high",
+          "max"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cline Free",
+    "vendor": "customendpoint",
+    "apiKey": "${env:CLINE_API_KEY}",
+    "url": "https://api.cline.bot/api/v1",
+    "models": [
+      {
+        "id": "stealth/ox-alpha",
+        "name": "Ox Alpha Free",
+        "toolCalling": true,
+        "maxInputTokens": 1048576,
+        "maxOutputTokens": 131072,
+        "thinking": true,
+        "streaming": true
+      },
+      {
+        "id": "deepseek-ai/deepseek-v4-flash",
+        "name": "DeepSeek V4 Flash Free",
+        "toolCalling": true,
+        "maxInputTokens": 1048576,
+        "maxOutputTokens": 131072,
+        "thinking": true,
+        "streaming": true
+      },
+      {
+        "id": "stepfun/step-3.7-flash",
+        "name": "StepFun Step 3.7 Flash Free",
+        "toolCalling": true,
+        "maxInputTokens": 262144,
+        "maxOutputTokens": 256000,
+        "streaming": true
+      },
+      {
+        "id": "poolside/laguna-s-2.1:free",
+        "name": "Laguna S 2.1 Free",
+        "toolCalling": true,
+        "maxInputTokens": 262144,
+        "maxOutputTokens": 32768,
+        "streaming": true
+      }
+    ]
+  },
+  {
+    "name": "OpenGateway Free",
+    "vendor": "customendpoint",
+    "apiKey": "${env:OPENGATEWAY_API_KEY}",
+    "url": "https://opengateway.gitlawb.com/v1",
+    "models": [
+      {
+        "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "name": "Nemotron 3 Ultra Free",
+        "toolCalling": true,
+        "maxInputTokens": 1000000,
+        "maxOutputTokens": 65536,
+        "thinking": true,
+        "streaming": true
+      }
+    ]
+  }
+]
