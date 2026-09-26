@@ -10,24 +10,17 @@
         "name": "Kilo Auto Free",
         "toolCalling": true,
         "maxInputTokens": 256000,
-        "maxOutputTokens": 10000,
+        "maxOutputTokens": 32768,
         "streaming": true
       },
       {
-        "id": "stepfun/step-3.7-flash:free",
-        "name": "StepFun Step 3.7 Flash Free",
+        "id": "stealth/space-bunny-alpha",
+        "name": "Space Bunny Alpha Free",
         "toolCalling": true,
-        "maxInputTokens": 262144,
-        "maxOutputTokens": 262144,
-        "streaming": true
-      },
-      {
-        "id": "tencent/hy3:free",
-        "name": "Tencent HY3 Free",
-        "toolCalling": true,
-        "maxInputTokens": 262144,
-        "maxOutputTokens": 128000,
-        "streaming": true
+        "maxInputTokens": 1000000,
+        "maxOutputTokens": 524288,
+        "streaming": true,
+        "vision": true
       },
       {
         "id": "poolside/laguna-s-2.1:free",
@@ -38,12 +31,48 @@
         "streaming": true
       },
       {
+        "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "name": "Nemotron 3 Ultra Free",
+        "toolCalling": true,
+        "maxInputTokens": 1000000,
+        "maxOutputTokens": 65536,
+        "streaming": true,
+        "thinking": true
+      },
+      {
         "id": "dots-studio/dots-3-note-preview:free",
         "name": "Dots 3 Note Preview Free",
         "toolCalling": true,
         "maxInputTokens": 512000,
-        "maxOutputTokens": 512000,
+        "maxOutputTokens": 460800,
+        "streaming": true,
+        "vision": true,
+        "thinking": true
+      },
+      {
+        "id": "inclusionai/ling-3.0-flash-sante:free",
+        "name": "Ling 3.0 Flash Sante Free",
+        "toolCalling": true,
+        "maxInputTokens": 262144,
+        "maxOutputTokens": 32768,
         "streaming": true
+      },
+      {
+        "id": "inclusionai/ling-3.0-flash-fin:free",
+        "name": "Ling 3.0 Flash Fin Free",
+        "toolCalling": true,
+        "maxInputTokens": 262144,
+        "maxOutputTokens": 32768,
+        "streaming": true
+      },
+      {
+        "id": "qwen/qwen3.8-27b:free",
+        "name": "Qwen 3.8 27B Free",
+        "toolCalling": true,
+        "maxInputTokens": 262144,
+        "maxOutputTokens": 235929,
+        "streaming": true,
+        "vision": true
       },
       {
         "id": "liquid/lfm-2.5-2.6b:free",
@@ -62,6 +91,15 @@
         "streaming": true
       },
       {
+        "id": "thinkingmachines/inkling-small:free",
+        "name": "Inkling Small Free",
+        "toolCalling": true,
+        "maxInputTokens": 1048576,
+        "maxOutputTokens": 262144,
+        "streaming": true,
+        "vision": true
+      },
+      {
         "id": "poolside/laguna-xs-2.1:free",
         "name": "Laguna XS 2.1 Free",
         "toolCalling": true,
@@ -78,28 +116,21 @@
         "streaming": true
       },
       {
-        "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
-        "name": "Nemotron 3 Ultra Free",
-        "toolCalling": true,
-        "maxInputTokens": 1000000,
-        "maxOutputTokens": 65536,
-        "streaming": true
-      },
-      {
         "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
         "name": "Nemotron 3 Nano Omni Free",
         "toolCalling": true,
         "maxInputTokens": 256000,
         "maxOutputTokens": 65536,
         "streaming": true,
-        "vision": true
+        "vision": true,
+        "thinking": true
       },
       {
         "id": "nvidia/nemotron-3-super-120b-a12b:free",
         "name": "Nemotron 3 Super Free",
         "toolCalling": true,
         "maxInputTokens": 262144,
-        "maxOutputTokens": 262144,
+        "maxOutputTokens": 235929,
         "streaming": true
       },
       {
@@ -107,52 +138,19 @@
         "name": "OpenRouter Free",
         "toolCalling": true,
         "maxInputTokens": 200000,
-        "maxOutputTokens": 8192,
-        "streaming": true,
-        "vision": true
-      },
-      {
-        "id": "meituan/longcat-2.0-free",
-        "name": "LongCat 2.0 Free",
-        "toolCalling": true,
-        "maxInputTokens": 1048576,
-        "maxOutputTokens": 131072,
-        "streaming": true
-      },
-      {
-        "id": "stealth/ox-alpha",
-        "name": "Ox Alpha Free",
-        "toolCalling": true,
-        "maxInputTokens": 1048576,
-        "maxOutputTokens": 131072,
-        "thinking": true,
-        "streaming": true
-      },
-      {
-        "id": "thinkingmachines/inkling-small:free",
-        "name": "Inkling Small Free",
-        "toolCalling": true,
-        "maxInputTokens": 1048576,
-        "maxOutputTokens": 262144,
-        "streaming": true,
-        "vision": true
-      },
-      {
-        "id": "thinkingmachines/inkling:free",
-        "name": "Inkling Free",
-        "toolCalling": true,
-        "maxInputTokens": 1048576,
-        "maxOutputTokens": 262144,
-        "streaming": true,
-        "vision": true
-      },
-      {
-        "id": "minimax/minimax-m2.7:free",
-        "name": "MiniMax M2.7 Free",
-        "toolCalling": true,
-        "maxInputTokens": 196608,
         "maxOutputTokens": 32768,
-        "streaming": true
+        "streaming": true,
+        "vision": true
+      },
+      {
+        "id": "stepfun/step-3.7-flash:free",
+        "name": "StepFun Step 3.7 Flash Free",
+        "toolCalling": true,
+        "maxInputTokens": 262144,
+        "maxOutputTokens": 262144,
+        "streaming": true,
+        "vision": true,
+        "thinking": true
       }
     ]
   },
