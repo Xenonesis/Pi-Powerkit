@@ -112,8 +112,15 @@
           "id": "kilo-auto/free",
           "name": "Kilo Auto (free)",
           "reasoning": false,
-          "input": ["text"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 256000,
           "maxTokens": 32768
         },
@@ -121,8 +128,16 @@
           "id": "stealth/space-bunny-alpha",
           "name": "Space Bunny Alpha (free)",
           "reasoning": false,
-          "input": ["text", "image", "video"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 1000000,
           "maxTokens": 524288
         },
@@ -130,8 +145,15 @@
           "id": "poolside/laguna-s-2.1:free",
           "name": "Laguna S 2.1 (free)",
           "reasoning": false,
-          "input": ["text"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 262144,
           "maxTokens": 32768
         },
@@ -139,8 +161,15 @@
           "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
           "name": "NVIDIA Nemotron 3 Ultra 550B (free)",
           "reasoning": true,
-          "input": ["text"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 1000000,
           "maxTokens": 65536
         },
@@ -148,8 +177,16 @@
           "id": "dots-studio/dots-3-note-preview:free",
           "name": "Dots 3 Note Preview (free)",
           "reasoning": true,
-          "input": ["text", "image"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 512000,
           "maxTokens": 460800
         },
@@ -157,8 +194,15 @@
           "id": "inclusionai/ling-3.0-flash-sante:free",
           "name": "Ling 3.0 Flash Sante (free)",
           "reasoning": false,
-          "input": ["text"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 262144,
           "maxTokens": 32768
         },
@@ -166,8 +210,15 @@
           "id": "inclusionai/ling-3.0-flash-fin:free",
           "name": "Ling 3.0 Flash Fin (free)",
           "reasoning": false,
-          "input": ["text"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 262144,
           "maxTokens": 32768
         },
@@ -175,8 +226,16 @@
           "id": "qwen/qwen3.8-27b:free",
           "name": "Qwen 3.8 27B (free)",
           "reasoning": false,
-          "input": ["text", "image", "video"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 262144,
           "maxTokens": 235929
         },
@@ -184,8 +243,15 @@
           "id": "liquid/lfm-2.5-2.6b:free",
           "name": "Liquid LFM 2.5 2.6B (free)",
           "reasoning": false,
-          "input": ["text"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 65536,
           "maxTokens": 8192
         },
@@ -193,8 +259,15 @@
           "id": "nvidia/nemotron-3.5-lightning:free",
           "name": "NVIDIA Nemotron 3.5 Lightning (free)",
           "reasoning": false,
-          "input": ["text"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 1000000,
           "maxTokens": 65536
         },
@@ -202,8 +275,16 @@
           "id": "thinkingmachines/inkling-small:free",
           "name": "Inkling Small (free)",
           "reasoning": false,
-          "input": ["text", "image", "audio"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 1048576,
           "maxTokens": 262144
         },
@@ -211,8 +292,15 @@
           "id": "poolside/laguna-xs-2.1:free",
           "name": "Laguna XS 2.1 (free)",
           "reasoning": false,
-          "input": ["text"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 262144,
           "maxTokens": 32768
         },
@@ -220,8 +308,15 @@
           "id": "cohere/north-mini-code:free",
           "name": "Cohere North Mini Code (free)",
           "reasoning": false,
-          "input": ["text"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 256000,
           "maxTokens": 64000
         },
@@ -229,8 +324,16 @@
           "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
           "name": "NVIDIA Nemotron 3 Nano Omni (free)",
           "reasoning": true,
-          "input": ["text", "audio", "image", "video"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 256000,
           "maxTokens": 65536
         },
@@ -238,8 +341,15 @@
           "id": "nvidia/nemotron-3-super-120b-a12b:free",
           "name": "NVIDIA Nemotron 3 Super 120B (free)",
           "reasoning": false,
-          "input": ["text"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 262144,
           "maxTokens": 235929
         },
@@ -247,8 +357,16 @@
           "id": "openrouter/free",
           "name": "OpenRouter Free",
           "reasoning": false,
-          "input": ["text", "image"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 200000,
           "maxTokens": 32768
         },
@@ -256,8 +374,16 @@
           "id": "stepfun/step-3.7-flash:free",
           "name": "StepFun Step 3.7 Flash (free)",
           "reasoning": true,
-          "input": ["text", "image"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 262144,
           "maxTokens": 262144
         }
@@ -373,8 +499,16 @@
           "id": "gpt-5.5",
           "name": "GPT-5.5 (via AgentRouter)",
           "reasoning": true,
-          "input": ["text", "image"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 1048576,
           "maxTokens": 131072
         },
@@ -382,8 +516,16 @@
           "id": "claude-opus-4-6",
           "name": "Claude Opus 4.6 (via AgentRouter)",
           "reasoning": true,
-          "input": ["text", "image"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 1000000,
           "maxTokens": 131072
         },
@@ -391,8 +533,16 @@
           "id": "claude-opus-4-7",
           "name": "Claude Opus 4.7 (via AgentRouter)",
           "reasoning": true,
-          "input": ["text", "image"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 1000000,
           "maxTokens": 131072
         },
@@ -400,8 +550,16 @@
           "id": "claude-opus-4-8",
           "name": "Claude Opus 4.8 (via AgentRouter)",
           "reasoning": true,
-          "input": ["text", "image"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 1000000,
           "maxTokens": 131072
         },
@@ -409,8 +567,15 @@
           "id": "glm-5.2",
           "name": "GLM-5.2 (via AgentRouter)",
           "reasoning": true,
-          "input": ["text"],
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
           "contextWindow": 1048576,
           "maxTokens": 131072
         }
