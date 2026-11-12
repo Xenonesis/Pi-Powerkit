@@ -7,150 +7,169 @@
     "models": [
       {
         "id": "kilo-auto/free",
-        "name": "Kilo Auto Free",
+        "name": "Auto Free",
         "toolCalling": true,
+        "vision": false,
         "maxInputTokens": 256000,
         "maxOutputTokens": 32768,
-        "streaming": true
-      },
-      {
-        "id": "stealth/space-bunny-alpha",
-        "name": "Space Bunny Alpha Free",
-        "toolCalling": true,
-        "maxInputTokens": 1000000,
-        "maxOutputTokens": 524288,
+        "contextWindow": 256000,
         "streaming": true,
-        "vision": true
+        "thinking": false
       },
       {
-        "id": "poolside/laguna-s-2.1:free",
-        "name": "Laguna S 2.1 Free",
+        "id": "nvidia/nemotron-3.5-super-vl:free",
+        "name": "NVIDIA: Nemotron 3.5 Super VL (free)",
         "toolCalling": true,
+        "vision": true,
+        "maxInputTokens": 1000000,
+        "maxOutputTokens": 131072,
+        "contextWindow": 1000000,
+        "streaming": true,
+        "thinking": true,
+        "supportsReasoningEffort": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      {
+        "id": "stealth/glyph-cluster",
+        "name": "Stealth: Glyph Cluster (free)",
+        "toolCalling": true,
+        "vision": false,
+        "maxInputTokens": 256000,
+        "maxOutputTokens": 256000,
+        "contextWindow": 256000,
+        "streaming": true,
+        "thinking": true,
+        "supportsReasoningEffort": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      {
+        "id": "baidu/ernie-5.5-flash-preview:free",
+        "name": "Baidu: ERNIE-5.5-Flash-Preview (free)",
+        "toolCalling": true,
+        "vision": false,
+        "maxInputTokens": 1024000,
+        "maxOutputTokens": 921600,
+        "contextWindow": 1024000,
+        "streaming": true,
+        "thinking": true,
+        "supportsReasoningEffort": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      {
+        "id": "liquid/lfm-3-1.7b:free",
+        "name": "LiquidAI: LFM3-1.7B (free)",
+        "toolCalling": true,
+        "vision": false,
         "maxInputTokens": 262144,
-        "maxOutputTokens": 32768,
-        "streaming": true
-      },
-      {
-        "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
-        "name": "Nemotron 3 Ultra Free",
-        "toolCalling": true,
-        "maxInputTokens": 1000000,
-        "maxOutputTokens": 65536,
+        "maxOutputTokens": 8192,
+        "contextWindow": 262144,
         "streaming": true,
-        "thinking": true
+        "thinking": true,
+        "supportsReasoningEffort": [
+          "low",
+          "medium",
+          "high"
+        ]
       },
       {
         "id": "dots-studio/dots-3-note-preview:free",
-        "name": "Dots 3 Note Preview Free",
+        "name": "Dots Studio: Dots3-Note Preview (free)",
         "toolCalling": true,
+        "vision": true,
         "maxInputTokens": 512000,
         "maxOutputTokens": 460800,
+        "contextWindow": 512000,
         "streaming": true,
-        "vision": true,
-        "thinking": true
-      },
-      {
-        "id": "inclusionai/ling-3.0-flash-sante:free",
-        "name": "Ling 3.0 Flash Sante Free",
-        "toolCalling": true,
-        "maxInputTokens": 262144,
-        "maxOutputTokens": 32768,
-        "streaming": true
-      },
-      {
-        "id": "inclusionai/ling-3.0-flash-fin:free",
-        "name": "Ling 3.0 Flash Fin Free",
-        "toolCalling": true,
-        "maxInputTokens": 262144,
-        "maxOutputTokens": 32768,
-        "streaming": true
-      },
-      {
-        "id": "qwen/qwen3.8-27b:free",
-        "name": "Qwen 3.8 27B Free",
-        "toolCalling": true,
-        "maxInputTokens": 262144,
-        "maxOutputTokens": 235929,
-        "streaming": true,
-        "vision": true
-      },
-      {
-        "id": "liquid/lfm-2.5-2.6b:free",
-        "name": "Liquid LFM 2.5 Free",
-        "toolCalling": true,
-        "maxInputTokens": 65536,
-        "maxOutputTokens": 8192,
-        "streaming": true
+        "thinking": true,
+        "supportsReasoningEffort": [
+          "low",
+          "medium",
+          "high"
+        ]
       },
       {
         "id": "nvidia/nemotron-3.5-lightning:free",
-        "name": "Nemotron 3.5 Lightning Free",
+        "name": "NVIDIA: Nemotron 3.5 Lightning (free)",
         "toolCalling": true,
+        "vision": false,
         "maxInputTokens": 1000000,
         "maxOutputTokens": 65536,
-        "streaming": true
-      },
-      {
-        "id": "thinkingmachines/inkling-small:free",
-        "name": "Inkling Small Free",
-        "toolCalling": true,
-        "maxInputTokens": 1048576,
-        "maxOutputTokens": 262144,
+        "contextWindow": 1000000,
         "streaming": true,
-        "vision": true
-      },
-      {
-        "id": "poolside/laguna-xs-2.1:free",
-        "name": "Laguna XS 2.1 Free",
-        "toolCalling": true,
-        "maxInputTokens": 262144,
-        "maxOutputTokens": 32768,
-        "streaming": true
+        "thinking": true,
+        "supportsReasoningEffort": [
+          "low",
+          "medium",
+          "high"
+        ]
       },
       {
         "id": "cohere/north-mini-code:free",
-        "name": "North Mini Code Free",
+        "name": "Cohere: North Mini Code (free)",
         "toolCalling": true,
+        "vision": false,
         "maxInputTokens": 256000,
         "maxOutputTokens": 64000,
-        "streaming": true
+        "contextWindow": 256000,
+        "streaming": true,
+        "thinking": true,
+        "supportsReasoningEffort": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      {
+        "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "name": "NVIDIA: Nemotron 3 Ultra (free)",
+        "toolCalling": true,
+        "vision": false,
+        "maxInputTokens": 1000000,
+        "maxOutputTokens": 65536,
+        "contextWindow": 1000000,
+        "streaming": true,
+        "thinking": true,
+        "supportsReasoningEffort": [
+          "low",
+          "medium",
+          "high"
+        ]
       },
       {
         "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-        "name": "Nemotron 3 Nano Omni Free",
+        "name": "NVIDIA: Nemotron 3 Nano Omni (free)",
         "toolCalling": true,
+        "vision": true,
         "maxInputTokens": 256000,
         "maxOutputTokens": 65536,
+        "contextWindow": 256000,
         "streaming": true,
-        "vision": true,
-        "thinking": true
-      },
-      {
-        "id": "nvidia/nemotron-3-super-120b-a12b:free",
-        "name": "Nemotron 3 Super Free",
-        "toolCalling": true,
-        "maxInputTokens": 262144,
-        "maxOutputTokens": 235929,
-        "streaming": true
+        "thinking": true,
+        "supportsReasoningEffort": [
+          "low",
+          "medium",
+          "high"
+        ]
       },
       {
         "id": "openrouter/free",
-        "name": "OpenRouter Free",
+        "name": "OpenRouter Free Models Router",
         "toolCalling": true,
+        "vision": true,
         "maxInputTokens": 200000,
         "maxOutputTokens": 32768,
+        "contextWindow": 200000,
         "streaming": true,
-        "vision": true
-      },
-      {
-        "id": "stepfun/step-3.7-flash:free",
-        "name": "StepFun Step 3.7 Flash Free",
-        "toolCalling": true,
-        "maxInputTokens": 262144,
-        "maxOutputTokens": 262144,
-        "streaming": true,
-        "vision": true,
-        "thinking": true
+        "thinking": false
       }
     ]
   },
