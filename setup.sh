@@ -62,6 +62,35 @@ for ext_dir in "$SRC_DIR"/packages/pi-*/extensions/; do
   [ -d "$ext_dir" ] && cp "$ext_dir"/*.ts "$PI_DIR/extensions/" 2>/dev/null && echo "  -> $(basename "$(dirname "$ext_dir")") copied"
 done
 
+# Extensions that also run inside OMP (same extension API)
+OMP_EXT_DIR="$HOME/.omp/agent/extensions"
+if [ -d "$HOME/.omp/agent" ]; then
+  mkdir -p "$OMP_EXT_DIR"
+  for pkg in pi-openhop-autohop; do
+    ext_dir="$SRC_DIR/packages/$pkg/extensions"
+    [ -d "$ext_dir" ] && cp "$ext_dir"/*.ts "$OMP_EXT_DIR/" 2>/dev/null && echo "  -> $pkg copied to OMP"
+  done
+fi
+
+# Packages with a src/ entry point are installed as packages, not copied as
+# single .ts files (their relative imports would break when copied flat).
+if command -v pi &>/dev/null; then
+  for pkg in pi-hermes-portal; do
+    pkg_dir="$SRC_DIR/packages/$pkg"
+    [ -f "$pkg_dir/package.json" ] && [ -d "$pkg_dir/src" ] || continue
+    pi install "$pkg_dir" >/dev/null 2>&1 && echo "  -> $pkg installed (pi)" || echo "  -> $pkg install failed — run: pi install $pkg_dir"
+  done
+fi
+
+if command -v omp &>/dev/null; then
+  for pkg in pi-hermes-portal; do
+    pkg_dir="$SRC_DIR/packages/$pkg"
+    [ -f "$pkg_dir/package.json" ] && [ -d "$pkg_dir/src" ] || continue
+    omp plugin install "$pkg_dir" >/dev/null 2>&1 && echo "  -> $pkg installed (omp)" || echo "  -> $pkg omp install failed — run: omp plugin install $pkg_dir"
+  done
+  echo "  Note: hermes-portal needs 'hermes portal login' once in your own terminal"
+fi
+
 # .env.example
 if [ ! -f "$PI_DIR/.env" ] && [ -f "$SRC_DIR/bootstrap/.env.example" ]; then
   cp "$SRC_DIR/bootstrap/.env.example" "$PI_DIR/.env"

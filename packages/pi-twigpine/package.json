@@ -1,0 +1,1 @@
+{"name":"pi-twigpine","version":"0.1.0","description":"Twigpine (twigpine.com/opengateway) provider with free models for pi","keywords":["pi-package","twigpine","opengateway","free-models","provider"],"license":"MIT","author":"pi-powerkit contributors","pi":{"extensions":["extensions/opengateway-provider.ts"]},"dependencies":{"@earendil-works/pi-coding-agent":"*"}}

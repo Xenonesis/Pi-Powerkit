@@ -1,0 +1,14 @@
+{
+  "name": "pi-openhop-autohop",
+  "version": "0.1.0",
+  "description": "Auto-rotate the openhop WARP exit IP when a provider free-limit wall hits — works in pi and omp",
+  "keywords": ["pi-package", "openhop", "warp", "rate-limit", "ip-rotation", "opencode", "omp"],
+  "license": "MIT",
+  "author": "pi-powerkit contributors",
+  "pi": {
+    "extensions": ["extensions/openhop-autohop.ts"]
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}

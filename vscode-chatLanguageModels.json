@@ -302,17 +302,35 @@
     ]
   },
   {
-    "name": "OpenGateway Free",
+    "name": "Twigpine Free",
     "vendor": "customendpoint",
     "apiKey": "${env:OPENGATEWAY_API_KEY}",
     "url": "https://opengateway.gitlawb.com/v1",
     "models": [
       {
-        "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
-        "name": "Nemotron 3 Ultra Free",
+        "id": "qwen/qwen3.8-max",
+        "name": "Qwen 3.8 Max",
+        "toolCalling": true,
+        "maxInputTokens": 262144,
+        "maxOutputTokens": 8192,
+        "thinking": true,
+        "streaming": true
+      },
+      {
+        "id": "qwen/qwen3.8-flash",
+        "name": "Qwen 3.8 Flash",
+        "toolCalling": true,
+        "maxInputTokens": 1048575,
+        "maxOutputTokens": 8192,
+        "thinking": true,
+        "streaming": true
+      },
+      {
+        "id": "nvidia/nemotron-3.5-super-vl:free",
+        "name": "Nemotron 3.5 Super VL",
         "toolCalling": true,
         "maxInputTokens": 1000000,
-        "maxOutputTokens": 65536,
+        "maxOutputTokens": 131072,
         "thinking": true,
         "streaming": true
       }

@@ -15,16 +15,25 @@ export default function (pi: ExtensionAPI) {
     apiKey: API_KEY,
     models: [
       {
-        id: "z-ai/glm-5.3-free",
-        name: "Z AI GLM 5.3 Free",
-        reasoning: false,
-        input: ["text"],
-        contextWindow: 1048576,
+        id: "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+        name: "Nemotron 3 Nano Omni (TokenRouter Free)",
+        reasoning: true,
+        input: ["text", "image"],
+        contextWindow: 262144,
         maxTokens: 65536,
+        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+      },
+      {
+        id: "stealth/union-alpha",
+        name: "Union Alpha (TokenRouter)",
+        reasoning: true,
+        input: ["text", "image"],
+        contextWindow: 1048576,
+        maxTokens: 131072,
         cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
       },
     ],
   });
 
-  console.log("[pi-tokenrouter] Registered 1 model (z-ai/glm-5.3-free)");
+  console.log("[pi-tokenrouter] Registered 2 models (tokenrouter)");
 }

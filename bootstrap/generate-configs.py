@@ -94,14 +94,14 @@ PROVIDERS = [
         ],
     },
     {
-        "name": "opengateway",
-        "label": "OpenGateway",
+        "name": "twigpine",
+        "label": "Twigpine",
         "baseUrl": "https://opengateway.gitlawb.com/v1",
         "envKey": "OPENGATEWAY_API_KEY",
         "models": [
-            {"id": "inclusionai/ling-3.0-flash:free", "name": "Ling 3.0 Flash (Free)", "reasoning": True, "ctx": 262144, "out": 32768, "input": ["text"]},
-            {"id": "nvidia/nemotron-3-ultra-550b-a55b:free", "name": "Nemotron 3 Ultra (Free)", "reasoning": True, "ctx": 1000000, "out": 65536, "input": ["text"]},
-            {"id": "mindai/macaron-v1-tall", "name": "Macaron V1 Tall (Free)", "reasoning": True, "ctx": 262144, "out": 65536, "input": ["text"]},
+            {"id": "qwen/qwen3.8-max", "name": "Qwen 3.8 Max (Free)", "reasoning": True, "ctx": 262144, "out": 8192, "input": ["text"]},
+            {"id": "qwen/qwen3.8-flash", "name": "Qwen 3.8 Flash (Free)", "reasoning": True, "ctx": 1048575, "out": 8192, "input": ["text"]},
+            {"id": "nvidia/nemotron-3.5-super-vl:free", "name": "Nemotron 3.5 Super VL (Free)", "reasoning": True, "ctx": 1000000, "out": 131072, "input": ["text", "image"]},
         ],
     },
     {

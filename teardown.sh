@@ -35,6 +35,17 @@ done
 OMP_FILE="$HOME/.omp/agent/models.yml"
 [ -f "$OMP_FILE" ] && rm -f "$OMP_FILE" && echo "  Removed OMP models.yml"
 
+# Package-style extensions (installed via pi install / omp plugin install)
+for pkg in pi-hermes-portal; do
+  if command -v pi &>/dev/null; then
+    pi uninstall "$pkg" >/dev/null 2>&1 && echo "  Removed pi package $pkg"
+  fi
+  if command -v omp &>/dev/null; then
+    omp plugin uninstall "$pkg" >/dev/null 2>&1 && echo "  Removed omp plugin $pkg"
+  fi
+done
+echo "  Note: to stop the shared Hermes proxy run: hermes proxy stop"
+
 echo ""
 echo "  Done. Configs removed. Re-run setup.sh to regenerate."
 echo "================================================"

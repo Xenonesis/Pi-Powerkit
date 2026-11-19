@@ -34,6 +34,8 @@
 | **[pi-ddg-search](./packages/pi-ddg-search)** | Free web search via DuckDuckGo — no API key required. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-ddg-search` |
 | **[pi-ssh](./packages/pi-ssh)** | SSH remote execution — run read/write/edit/bash on remote machines. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-ssh` |
 | **[pi-permission-gate](./packages/pi-permission-gate)** | Permission enforcement hooks for tool approvals. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-permission-gate` |
+| **[pi-openhop-autohop](./packages/pi-openhop-autohop)** | Auto-rotates the openhop WARP IP on free-limit walls — pi **and** omp. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-openhop-autohop` |
+| **[pi-hermes-portal](./packages/pi-hermes-portal)** | Hermes / Nous Portal **free-tier** models via the official Hermes proxy — pi **and** omp. No API-key purchase. | `pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-hermes-portal` |
 
 ## Install everything (alternative)
 
@@ -43,9 +45,113 @@ If you already have pi and just want the packages without the full bootstrap:
 pi install git:github.com/Xenonesis/Pi-Powerkit
 ```
 
-This installs all 14 packages. You still need to set API keys via `.env` or `models.json`.
+This installs all packages in `packages/`. You still need to set API keys via `.env` or `models.json`.
 
 > **Note:** pi-headroom is optional — it runs a local compression service that uses extra RAM. Skip if you're on a tight system.
+
+## Agent install — non-interactive
+
+> For automated agents (pi, omp, Codex, Claude Code). Every command is non-interactive and safe to re-run.
+> Work top to bottom; each step ends with a check that must print `ok`.
+
+### 0. Detect the environment
+
+```bash
+uname -s                                  # MINGW*/MSYS* = Windows, Darwin = macOS, Linux
+command -v pi  && echo "pi ok"
+command -v omp && echo "omp ok"
+test -d "$HOME/.pi/agent"  && echo "pi dir ok"
+test -d "$HOME/.omp/agent" && echo "omp dir ok"
+```
+
+### 1. Install the extension
+
+```bash
+pi install git:github.com/Xenonesis/Pi-Powerkit/tree/main/packages/pi-openhop-autohop
+```
+
+Check — either form is enough:
+
+```bash
+grep -q "openhop-autohop" "$HOME/.pi/agent/settings.json" && echo ok
+test -f "$HOME/.pi/agent/extensions/openhop-autohop.ts" && echo ok
+```
+
+omp uses the **same file** (identical extension API) — copy it across. A `pi install` of a
+subdirectory lands under `~/.pi/agent/git/github.com/Xenonesis/Pi-Powerkit/packages/pi-openhop-autohop`,
+so locate it first rather than assuming the extensions dir:
+
+```bash
+SRC=$(find "$HOME/.pi" -name openhop-autohop.ts 2>/dev/null | head -1)
+if [ -n "$SRC" ] && [ -d "$HOME/.omp/agent" ]; then
+  mkdir -p "$HOME/.omp/agent/extensions"
+  cp "$SRC" "$HOME/.omp/agent/extensions/"
+fi
+test -f "$HOME/.omp/agent/extensions/openhop-autohop.ts" && echo ok
+```
+
+### 2. Install the openhop prerequisite
+
+The extension only *calls* `openhop-hop`; the IP rotation belongs to [openhop](https://openhop.cfd).
+
+| OS | Install |
+|----|---------|
+| **Windows** | Download `openhop.exe` from [openhop.cfd](https://openhop.cfd) and run it once. It checks Cloudflare WARP + OpenCode, then installs the CLI, tray app, `openhop-hop` and two scheduled tasks. |
+| **Linux** | `git clone https://github.com/ShadowySphinX/Opencode-Unlimited-Limit-Bypass- && cd Opencode-Unlimited-Limit-Bypass- && ./install.sh` |
+| **macOS** | Not supported by openhop. The extension stays a no-op. |
+
+Check:
+
+```bash
+# Windows (Git Bash / MSYS)
+test -f "$LOCALAPPDATA/openhop/bin/openhop-hop.cmd" && echo ok
+# Linux
+command -v openhop-hop && echo ok
+```
+
+Missing? The extension degrades safely: it logs `openhop-hop not found` and never breaks a turn.
+Install openhop later — the extension needs no re-install.
+
+> **Blast radius of openhop itself** (not of this extension): Cloudflare WARP in full TUN mode reroutes all
+> machine traffic, adds `%LOCALAPPDATA%\openhop\bin` to PATH, and registers the `openhop-Keeper` and
+> `openhop-Guard` scheduled tasks. Run it as a normal user; only the optional firewall kill-switch needs admin.
+
+### 3. Optional environment toggles
+
+| Env var | Default | Effect |
+|---|---|---|
+| `OPENHOP_AUTOHOP` | `1` | `0` disables the extension entirely |
+| `OPENHOP_AUTOCONTINUE` | `1` | `0` rotates the IP only, no automatic `continue` |
+| `OPENHOP_TOAST` | `0` | `1` enables the optional desktop toast (TUI notification stays) |
+
+Set them as user environment variables on Windows (`setx` / User registry) or in your shell profile.
+
+### 4. Verify it loaded
+
+Restart pi / omp (extensions load at startup), then:
+
+```bash
+# Windows
+tail -3 "$LOCALAPPDATA/openhop/guard/omp_pi_hop.log"
+# Linux
+tail -3 "$HOME/.local/share/openhop/guard/omp_pi_hop.log"
+```
+
+Expected:
+
+```
+2026-…Z loaded (cooldown 90s, autocontinue on, toast on)
+```
+
+No `loaded` line → the file was not discovered; re-check step 1 paths.
+
+### Uninstall
+
+```bash
+rm -f "$HOME/.pi/agent/extensions/openhop-autohop.ts"
+rm -f "$HOME/.omp/agent/extensions/openhop-autohop.ts"
+# and remove the entry from ~/.pi/agent/settings.json "packages" if you used `pi install`
+```
 
 ## OS Compatibility
 
@@ -68,6 +174,7 @@ This installs all 14 packages. You still need to set API keys via `.env` or `mod
 - 🔌 **SSH remote** — run on remote machines via SSH
 - 🔌 **Modular** — install only what you need
 - 🗜️ **Context compression** — headroom integration for 60–95% token savings
+- 🔁 **Free-limit auto-rotation** — openhop WARP hop for pi **and** omp, with notifications
 
 ## Quick start — Clone & run
 
@@ -144,6 +251,15 @@ Registers 11 verified-working Cline free models + 1 TokenRouter model. API keys 
 ### pi-opencode-free
 Fetches free models from OpenCode Zen API at startup, caches them to `~/.pi/agent/cache/opencode-free.json`, refreshes in background every hour. API key from `OPENCODE_API_KEY`.
 
+### pi-hermes-portal
+Registers the Hermes / Nous Portal zero-priced models through the local Hermes proxy (`127.0.0.1:8645/v1`).
+- Starts the proxy if it is not already listening, and reuses it when it is
+- Registers **only** models whose proxy pricing is exactly `0` for prompt and completion — unknown pricing is treated as paid, so a paid model can never be selected
+- Sends the placeholder bearer `hermes-local`; the proxy attaches your real credential (no token is read or logged)
+- Binds `127.0.0.1` only, never `0.0.0.0`
+- Commands: `/hermes status | models | refresh | test | setup | quota`
+- Requires `hermes portal login` in your own terminal (browser flow cannot be driven from an extension)
+
 ### pi-headroom
 Wraps the [Headroom](https://github.com/headroomlabs-ai/headroom) compression service. Provides two tools:
 - `headroom.compress` — compress text/messages to save tokens
@@ -172,6 +288,8 @@ export HEADROOM_API_KEY="sk-..."                     # optional for cloud
 | pi-ddg-search | ❌ | Uses \`node:child_process\` (curl) — needs native Node |
 | pi-ssh | ❌ | Uses \`node:child_process\` (spawn) — needs native Node |
 | pi-permission-gate | ✅ | Pure JS — no Node deps |
+| pi-openhop-autohop | ❌ | Uses \`node:child_process\` + \`node:fs\` — needs native Node |
+| pi-hermes-portal | ❌ | Uses \`node:child_process\` + \`node:fs\` (proxy probing, Hermes CLI) — needs native Node |
 
 > Most provider extensions work with pi_agent_rust because they only use \`registerProvider()\` and env vars. Browser, cache-based, search, and SSH extensions need Node.js.
 
@@ -183,6 +301,8 @@ See individual package READMEs:
 - [pi-opencode-free setup](./packages/pi-opencode-free/README.md)
 - [NVIDIA NIM setup](./examples/README.md)
 - [pi-headroom setup](./packages/pi-headroom/README.md)
+- [pi-openhop-autohop setup](./packages/pi-openhop-autohop/README.md)
+- [pi-hermes-portal setup](./packages/pi-hermes-portal/README.md)
 
 ## Contributing
 

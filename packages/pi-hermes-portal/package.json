@@ -1,0 +1,44 @@
+{
+  "name": "pi-hermes-portal",
+  "version": "0.1.0",
+  "description": "Hermes / Nous Portal free-tier models inside Pi and OMP, via the official Hermes subscription proxy. No API key purchase.",
+  "keywords": [
+    "pi",
+    "pi-package",
+    "pi-extension",
+    "pi-coding-agent",
+    "omp",
+    "hermes",
+    "nous",
+    "nous-portal",
+    "provider",
+    "free-models"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "files": [
+    "src",
+    "!src/**/*.test.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "test:node": "node --test --experimental-strip-types \"tests/*.test.ts\"",
+    "check": "npm run typecheck && npm test"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
