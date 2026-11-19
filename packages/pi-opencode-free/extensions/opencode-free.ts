@@ -3,7 +3,7 @@ import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { homedir } from "node:os";
 
-const API_KEY = "REDACTED_OPENCODE_KEY";
+const API_KEY = process.env.OPENCODE_API_KEY || "";
 const BASE_URL = "https://opencode.ai/zen/v1";
 const CACHE_PATH = join(homedir(), ".pi", "agent", "cache", "opencode-free.json");
 

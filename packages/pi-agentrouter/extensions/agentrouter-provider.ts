@@ -1,6 +1,6 @@
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
-const API_KEY = process.env.AGENTROUTER_API_KEY || "REDACTED_AGENTROUTER_KEY";
+const API_KEY = process.env.AGENTROUTER_API_KEY || "";
 
 // Verified working models with current API key
 const MODELS = [
