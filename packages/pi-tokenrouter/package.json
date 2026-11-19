@@ -4,7 +4,7 @@
   "description": "TokenRouter free model provider for Pi coding agent (qwen/qwen3.8-max-free)",
   "license": "MIT",
   "dependencies": {
-    "@earendil-works/pi-coding-agent": ">=0.1.0"
+    "@earendil-works/pi-coding-agent": ">=0.79.0"
   },
   "keywords": [
     "pi",

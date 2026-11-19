@@ -4,8 +4,8 @@
   "description": "Headroom context compression extension for Pi coding agent",
   "license": "MIT",
   "dependencies": {
-    "headroom-ai": "^0.22.4",
-    "@earendil-works/pi-coding-agent": ">=0.1.0"
+    "headroom-ai": "^0.44.0",
+    "@earendil-works/pi-coding-agent": ">=0.79.0"
   },
   "keywords": [
     "pi",
